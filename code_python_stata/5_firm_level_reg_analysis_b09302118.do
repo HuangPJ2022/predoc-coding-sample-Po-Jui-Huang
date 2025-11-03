@@ -2,7 +2,7 @@
 // 1. compute TFP
 // 2. firm level reg 
 /*------------------------*/
-cd "C:\Users\user0522\Documents\GitHub\The-Fall-of-the-Labor-Share-in-Taiwan_Three-Potential-Factors\"
+cd "my path"
 
 // import data
 import excel "./data/pre_reg_data.xlsx", sheet("Sheet1") firstrow clear
