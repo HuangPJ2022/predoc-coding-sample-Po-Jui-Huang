@@ -1,0 +1,41 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{table\label{tab1}}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                    &\multicolumn{1}{c}{fouls\_rate}&\multicolumn{1}{c}{fouls\_rate}&\multicolumn{1}{c}{fouls\_rate}\\
+\hline
+black=1 $\times$ fracwhite&       0.198\sym{***}&       0.196\sym{**} &       0.196\sym{**} \\
+                    &      (3.45)         &      (2.70)         &      (2.69)         \\
+[1em]
+age                 &      -0.726\sym{***}&      -0.715\sym{***}&       1.771         \\
+                    &    (-16.97)         &    (-14.83)         &      (1.76)         \\
+[1em]
+all-star            &      -0.382\sym{***}&      -0.434\sym{***}&      -0.436\sym{***}\\
+                    &    (-18.89)         &     (-6.94)         &     (-6.96)         \\
+[1em]
+player was one of starting five for this game&      -0.988\sym{***}&      -1.003\sym{***}&      -1.004\sym{***}\\
+                    &    (-67.11)         &    (-25.11)         &    (-25.13)         \\
+[1em]
+home team           &      -0.126\sym{***}&      -0.212\sym{***}&      -0.142\sym{***}\\
+                    &    (-12.22)         &     (-6.48)         &     (-3.40)         \\
+[1em]
+attendance (1,000s) &     0.00833\sym{***}&     0.00345         &     0.00362         \\
+                    &      (5.56)         &      (0.75)         &      (0.79)         \\
+[1em]
+out of contention   &      -0.131\sym{***}&      -0.150\sym{*}  &      -0.138         \\
+                    &     (-5.27)         &     (-2.11)         &     (-1.93)         \\
+[1em]
+coach\_black         &      -0.106\sym{***}&     -0.0790         &     -0.0798\sym{*}  \\
+                    &     (-7.06)         &     (-1.95)         &     (-1.97)         \\
+[1em]
+home\_black          &                     &                     &     -0.0845\sym{**} \\
+                    &                     &                     &     (-2.69)         \\
+\hline
+Observations        &      266957         &      266972         &      266957         \\
+\hline\hline
+\multicolumn{4}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

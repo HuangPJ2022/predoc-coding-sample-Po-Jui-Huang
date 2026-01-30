@@ -1,0 +1,409 @@
+--------------------------------------------------------------------------------------------------------------------------------------------
+      name:  labour_winter_pset1_Po_Jui_Huang
+       log:  C:\Users\user0522\Documents\GitHub\predoc-coding-sample-Po-Jui-Huang\labour_econ_winter_pset\labour_winter_pset1_Po-Jui_Huang.l
+> og
+  log type:  text
+ opened on:  30 Jan 2026, 21:42:13
+
+. 
+. /*===== generate variables & declare varlist =====*/
+. egen game_id = group(edate year home_team opp_team)
+(15 missing values generated)
+
+. encode player_id, gen(player)
+
+. encode team, gen(team_code)
+
+. 
+. gen black = 0
+
+. replace black = 1 if blackplayer == "Black"
+(214,291 real changes made)
+
+. 
+. // necesary variables for model 1
+. global controls age all_star starter home attend out_cont coach_black
+
+. global player_fe height weight center 
+
+. global referee_fe ref1_id ref2_id ref3_id
+
+. global player_perf p_min p_assists p_blocks p_rbd p_rbo p_steals p_turnover ///
+>                   p_fta p_fg2a p_fg3a p_fouls p_fg2per p_fg3per p_ftper
+
+. global indicator p_zerofg2per p_zerofg3per p_zeroftper
+
+. 
+. // generate interaction terms
+. foreach v of global controls{
+  2.     gen fracwhite_`v' = `v' * fracwhite
+  3. }
+
+. 
+. foreach v of global player_fe{
+  2.     gen fracwhite_`v' = `v' * fracwhite
+  3. }
+
+. 
+. foreach v of global referee_fe{
+  2.     gen fracwhite_`v' = `v' * fracwhite
+  3. }
+
+. 
+. foreach v of global player_perf{
+  2.     gen fracwhite_`v' = `v' * fracwhite
+  3. }
+
+. 
+. foreach v of global indicator{
+  2.         gen fracwhite_`v' = `v' * fracwhite
+  3. }
+
+. 
+. // additional variables for model 2
+. global indicator_interaction fracwhite_p_zeroftper fracwhite_p_zerofg3per fracwhite_p_zerofg2per
+
+. 
+. global perf_interaction fracwhite_p_ftper fracwhite_p_fg3per fracwhite_p_fg2per fracwhite_p_fouls fracwhite_p_fg3a ///
+>  fracwhite_p_fg2a fracwhite_p_fta fracwhite_p_turnover fracwhite_p_steals fracwhite_p_rbo ///
+>  fracwhite_p_rbd fracwhite_p_blocks fracwhite_p_assists fracwhite_p_min 
+
+.  
+. global ref_interaction fracwhite_ref3_id fracwhite_ref2_id fracwhite_ref1_id 
+
+.  
+. global player_interaction fracwhite_center fracwhite_weight fracwhite_height 
+
+.  
+. global control_interaction fracwhite_coach_black fracwhite_out_cont fracwhite_attend fracwhite_starter fracwhite_all_star fracwhite_age fr
+> acwhite_home
+
+. 
+. // additional variables for model 3
+. gen player_year = player * year
+
+. gen home_black = home * black
+
+. gen team_game = team_code * game_id
+(15 missing values generated)
+
+. 
+. /*===== estimation =====*/
+. // model 1
+. eststo: reghdfe fouls_rate i.black##c.fracwhite $controls $player_fe  [aw=min], ///
+>     absorb(player year $referee_fe) vce(cluster game_id)
+(dropped 12 singleton observations)
+(MWFE estimator converged in 14 iterations)
+note: 1bn.black is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: fracwhite is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: height is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: weight is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: center is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+
+HDFE Linear regression                            Number of obs   =    266,957
+Absorbing 5 HDFE groups                           F(   8,  26644) =     722.72
+Statistics robust to heteroskedasticity           Prob > F        =     0.0000
+                                                  R-squared       =     0.1844
+                                                  Adj R-squared   =     0.1799
+                                                  Within R-sq.    =     0.0186
+Number of clusters (game_id) =     26,645         Root MSE        =     3.0247
+
+                                (Std. Err. adjusted for 26,645 clusters in game_id)
+-----------------------------------------------------------------------------------
+                  |               Robust
+       fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------+----------------------------------------------------------------
+          1.black |          0  (omitted)
+        fracwhite |          0  (omitted)
+                  |
+black#c.fracwhite |
+               1  |   .1982942   .0574636     3.45   0.001     .0856625    .3109259
+                  |
+              age |  -.7264322   .0428034   -16.97   0.000    -.8103292   -.6425351
+         all_star |  -.3819376   .0202162   -18.89   0.000    -.4215625   -.3423127
+          starter |  -.9875583   .0147161   -67.11   0.000    -1.016403   -.9587141
+             home |  -.1255048   .0102744   -12.22   0.000    -.1456432   -.1053663
+           attend |   .0083333   .0014982     5.56   0.000     .0053967      .01127
+         out_cont |  -.1307091   .0247992    -5.27   0.000    -.1793169   -.0821014
+      coach_black |  -.1061483   .0150245    -7.06   0.000    -.1355972   -.0766994
+           height |          0  (omitted)
+           weight |          0  (omitted)
+           center |          0  (omitted)
+            _cons |   25.27619   1.192278    21.20   0.000     22.93926    27.61312
+-----------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+      player |      1178           0        1178     |
+        year |        12           1          11     |
+     ref1_id |        92           1          91    ?|
+     ref2_id |        94           5          89    ?|
+     ref3_id |        93           2          91    ?|
+-----------------------------------------------------+
+? = number of redundant parameters may be higher
+(est1 stored)
+
+. 
+. // model 2
+. eststo: reghdfe fouls_rate c.fracwhite##i.black $controls $player_fe $player_perf $indicator $indicator_interaction $perf_interaction $ref
+> _interaction $player_interaction $control_interaction [aw=min], absorb($referee_fe player year) 
+(dropped 12 singleton observations)
+(MWFE estimator converged in 15 iterations)
+note: fracwhite is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: 1bn.black is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: height is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: weight is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: center is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_min is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_assists is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_blocks is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_rbd is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_rbo is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_steals is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_turnover is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fta is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg2a is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg3a is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fouls is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg2per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg3per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_ftper is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_zerofg2per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_zerofg3per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_zeroftper is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+
+HDFE Linear regression                            Number of obs   =    266,972
+Absorbing 5 HDFE groups                           F(  38, 265474) =     134.06
+                                                  Prob > F        =     0.0000
+                                                  R-squared       =     0.1846
+                                                  Adj R-squared   =     0.1800
+                                                  Within R-sq.    =     0.0188
+                                                  Root MSE        =     3.0245
+
+----------------------------------------------------------------------------------------
+            fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-----------------------+----------------------------------------------------------------
+             fracwhite |          0  (omitted)
+               1.black |          0  (omitted)
+                       |
+     black#c.fracwhite |
+                    1  |   .1961762   .0726116     2.70   0.007     .0538594    .3384931
+                       |
+                   age |  -.7145062   .0481957   -14.83   0.000    -.8089686   -.6200439
+              all_star |  -.4341708   .0626042    -6.94   0.000    -.5568732   -.3114683
+               starter |  -1.003104   .0399491   -25.11   0.000    -1.081403   -.9248047
+                  home |  -.2124911   .0327804    -6.48   0.000    -.2767397   -.1482424
+                attend |   .0034471   .0045853     0.75   0.452      -.00554    .0124343
+              out_cont |  -.1502422   .0713078    -2.11   0.035    -.2900036   -.0104808
+           coach_black |  -.0790254   .0404822    -1.95   0.051    -.1583694    .0003185
+                height |          0  (omitted)
+                weight |          0  (omitted)
+                center |          0  (omitted)
+                 p_min |          0  (omitted)
+             p_assists |          0  (omitted)
+              p_blocks |          0  (omitted)
+                 p_rbd |          0  (omitted)
+                 p_rbo |          0  (omitted)
+              p_steals |          0  (omitted)
+            p_turnover |          0  (omitted)
+                 p_fta |          0  (omitted)
+                p_fg2a |          0  (omitted)
+                p_fg3a |          0  (omitted)
+               p_fouls |          0  (omitted)
+              p_fg2per |          0  (omitted)
+              p_fg3per |          0  (omitted)
+               p_ftper |          0  (omitted)
+          p_zerofg2per |          0  (omitted)
+          p_zerofg3per |          0  (omitted)
+           p_zeroftper |          0  (omitted)
+ fracwhite_p_zeroftper |   1.940538   2.770794     0.70   0.484    -3.490142    7.371219
+fracwhite_p_zerofg3per |   .1682054   .1968641     0.85   0.393    -.2176429    .5540537
+fracwhite_p_zerofg2per |   45.24559   51.49402     0.88   0.380     -55.6813    146.1725
+     fracwhite_p_ftper |   .4380597   .3982708     1.10   0.271    -.3425403     1.21866
+    fracwhite_p_fg3per |   .2588743   .3002796     0.86   0.389    -.3296655    .8474142
+    fracwhite_p_fg2per |   2.113137   .8231064     2.57   0.010     .4998713    3.726404
+     fracwhite_p_fouls |   .0213845   .0284751     0.75   0.453     -.034426     .077195
+      fracwhite_p_fg3a |   .0110405   .0170282     0.65   0.517    -.0223342    .0444153
+      fracwhite_p_fg2a |  -.0044758   .0095553    -0.47   0.639     -.023204    .0142524
+       fracwhite_p_fta |     -.0278   .0190494    -1.46   0.144    -.0651363    .0095364
+  fracwhite_p_turnover |   .0164045   .0551617     0.30   0.766    -.0917109    .1245199
+    fracwhite_p_steals |    .076136   .0529702     1.44   0.151    -.0276842    .1799561
+       fracwhite_p_rbo |  -.0217881   .0401694    -0.54   0.588     -.100519    .0569429
+       fracwhite_p_rbd |   .0185954   .0234597     0.79   0.428    -.0273849    .0645757
+    fracwhite_p_blocks |   .0748239   .0412992     1.81   0.070    -.0061213    .1557691
+   fracwhite_p_assists |  -.0044599   .0202803    -0.22   0.826    -.0442087    .0352889
+       fracwhite_p_min |   4.06e-06   3.86e-06     1.05   0.293    -3.51e-06    .0000116
+     fracwhite_ref3_id |   -.001643   .0007081    -2.32   0.020    -.0030309   -.0002552
+     fracwhite_ref2_id |  -.0012144   .0007046    -1.72   0.085    -.0025955    .0001667
+     fracwhite_ref1_id |  -.0005658   .0007947    -0.71   0.476    -.0021233    .0009918
+      fracwhite_center |  -.2327554   .0954074    -2.44   0.015    -.4197513   -.0457595
+      fracwhite_weight |  -.0011401   .0017099    -0.67   0.505    -.0044916    .0022113
+      fracwhite_height |   .0079735   .0149402     0.53   0.594    -.0213088    .0372558
+ fracwhite_coach_black |  -.0399178   .0546162    -0.73   0.465     -.146964    .0671284
+    fracwhite_out_cont |   .0276126   .0973112     0.28   0.777    -.1631146    .2183398
+      fracwhite_attend |   .0072421   .0062529     1.16   0.247    -.0050135    .0194977
+     fracwhite_starter |   .0237217   .0542695     0.44   0.662    -.0826451    .1300885
+    fracwhite_all_star |   .0767872   .0836311     0.92   0.359    -.0871274    .2407018
+         fracwhite_age |  -.0147217   .0065489    -2.25   0.025    -.0275573    -.001886
+        fracwhite_home |   .1281497   .0451266     2.84   0.005     .0397028    .2165965
+                 _cons |   24.02135   1.582389    15.18   0.000     20.91991    27.12279
+----------------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+     ref1_id |        92           0          92     |
+     ref2_id |        94           5          89     |
+     ref3_id |        93           2          91    ?|
+      player |      1178           1        1177    ?|
+        year |        12           1          11    ?|
+-----------------------------------------------------+
+? = number of redundant parameters may be higher
+(est2 stored)
+
+.         
+. // model 3
+. eststo: reghdfe fouls_rate c.fracwhite##i.black $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_interaction $re
+> f_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id [aw=min], absorb($referee_fe pla
+> yer year) 
+(dropped 12 singleton observations)
+(MWFE estimator converged in 15 iterations)
+note: fracwhite is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: 1bn.black is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: height is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: weight is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: center is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_min is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_assists is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_blocks is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_rbd is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_rbo is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_steals is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_turnover is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fta is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg2a is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg3a is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fouls is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg2per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_fg3per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_ftper is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_zerofg2per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_zerofg3per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: p_zeroftper is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+
+HDFE Linear regression                            Number of obs   =    266,957
+Absorbing 5 HDFE groups                           F(  43, 265454) =     119.00
+                                                  Prob > F        =     0.0000
+                                                  R-squared       =     0.1847
+                                                  Adj R-squared   =     0.1801
+                                                  Within R-sq.    =     0.0189
+                                                  Root MSE        =     3.0245
+
+----------------------------------------------------------------------------------------
+            fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-----------------------+----------------------------------------------------------------
+             fracwhite |          0  (omitted)
+               1.black |          0  (omitted)
+                       |
+     black#c.fracwhite |
+                    1  |   .1955078   .0726198     2.69   0.007      .053175    .3378406
+                       |
+                   age |   1.770888    1.00374     1.76   0.078    -.1964157    3.738191
+              all_star |  -.4355269   .0626111    -6.96   0.000     -.558243   -.3128107
+               starter |  -1.003988   .0399553   -25.13   0.000    -1.082299   -.9256763
+                  home |  -.1424202   .0418423    -3.40   0.001      -.22443   -.0604104
+                attend |    .003616   .0045873     0.79   0.431     -.005375    .0126071
+              out_cont |  -.1378207   .0715224    -1.93   0.054    -.2780027    .0023613
+           coach_black |  -.0797998   .0405501    -1.97   0.049    -.1592769   -.0003227
+                height |          0  (omitted)
+                weight |          0  (omitted)
+                center |          0  (omitted)
+                 p_min |          0  (omitted)
+             p_assists |          0  (omitted)
+              p_blocks |          0  (omitted)
+                 p_rbd |          0  (omitted)
+                 p_rbo |          0  (omitted)
+              p_steals |          0  (omitted)
+            p_turnover |          0  (omitted)
+                 p_fta |          0  (omitted)
+                p_fg2a |          0  (omitted)
+                p_fg3a |          0  (omitted)
+               p_fouls |          0  (omitted)
+              p_fg2per |          0  (omitted)
+              p_fg3per |          0  (omitted)
+               p_ftper |          0  (omitted)
+          p_zerofg2per |          0  (omitted)
+          p_zerofg3per |          0  (omitted)
+           p_zeroftper |          0  (omitted)
+ fracwhite_p_zeroftper |   1.928643   2.770755     0.70   0.486    -3.501962    7.359247
+fracwhite_p_zerofg3per |   .1672288   .1968615     0.85   0.396    -.2186145     .553072
+fracwhite_p_zerofg2per |   45.28055   51.49312     0.88   0.379    -55.64457    146.2057
+     fracwhite_p_ftper |   .4415094   .3983013     1.11   0.268    -.3391503    1.222169
+    fracwhite_p_fg3per |   .2537964   .3002913     0.85   0.398    -.3347665    .8423592
+    fracwhite_p_fg2per |   2.100711   .8231354     2.55   0.011     .4873881    3.714034
+     fracwhite_p_fouls |   .0208255   .0284765     0.73   0.465    -.0349877    .0766387
+      fracwhite_p_fg3a |   .0110531     .01703     0.65   0.516    -.0223253    .0444315
+      fracwhite_p_fg2a |  -.0044491   .0095555    -0.47   0.641    -.0231777    .0142794
+       fracwhite_p_fta |  -.0287404   .0190521    -1.51   0.131     -.066082    .0086012
+  fracwhite_p_turnover |   .0169029    .055164     0.31   0.759     -.091217    .1250229
+    fracwhite_p_steals |   .0758975   .0529766     1.43   0.152    -.0279352    .1797302
+       fracwhite_p_rbo |   -.020994   .0401725    -0.52   0.601     -.099731    .0577431
+       fracwhite_p_rbd |   .0185032   .0234607     0.79   0.430    -.0274792    .0644855
+    fracwhite_p_blocks |    .074865   .0413036     1.81   0.070    -.0060889     .155819
+   fracwhite_p_assists |  -.0053369   .0202832    -0.26   0.792    -.0450915    .0344176
+       fracwhite_p_min |   4.08e-06   3.86e-06     1.06   0.291    -3.50e-06    .0000117
+     fracwhite_ref3_id |  -.0016455   .0007081    -2.32   0.020    -.0030334   -.0002576
+     fracwhite_ref2_id |  -.0012073   .0007047    -1.71   0.087    -.0025884    .0001738
+     fracwhite_ref1_id |  -.0005704   .0007947    -0.72   0.473    -.0021279    .0009871
+      fracwhite_center |  -.2318909   .0954106    -2.43   0.015    -.4188931   -.0448887
+      fracwhite_weight |  -.0011725     .00171    -0.69   0.493     -.004524     .002179
+      fracwhite_height |   .0074583   .0149431     0.50   0.618    -.0218298    .0367464
+ fracwhite_coach_black |  -.0397174   .0546265    -0.73   0.467    -.1467838     .067349
+    fracwhite_out_cont |   .0210847   .0973475     0.22   0.829    -.1697137    .2118831
+      fracwhite_attend |   .0071912   .0062537     1.15   0.250    -.0050658    .0194482
+     fracwhite_starter |   .0236936   .0542719     0.44   0.662    -.0826779    .1300651
+    fracwhite_all_star |   .0775241   .0836335     0.93   0.354    -.0863953    .2414435
+         fracwhite_age |  -.0148369   .0065491    -2.27   0.023    -.0276729   -.0020008
+        fracwhite_home |   .1284178   .0451299     2.85   0.004     .0399644    .2168712
+           player_year |  -.0000115   7.43e-06    -1.55   0.122    -.0000261    3.06e-06
+            home_black |  -.0844777   .0313499    -2.69   0.007    -.1459227   -.0230327
+             team_game |  -2.60e-07   1.27e-07    -2.04   0.041    -5.10e-07   -1.08e-08
+             team_code |   .0044993   .0019477     2.31   0.021     .0006819    .0083168
+               game_id |  -.0005193   .0002112    -2.46   0.014    -.0009333   -.0001053
+                 _cons |   -24.5955   26.74614    -0.92   0.358    -77.01722    27.82621
+----------------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+     ref1_id |        92           0          92     |
+     ref2_id |        94           5          89     |
+     ref3_id |        93           2          91    ?|
+      player |      1178           1        1177    ?|
+        year |        12           1          11    ?|
+-----------------------------------------------------+
+? = number of redundant parameters may be higher
+(est3 stored)
+
+. 
+. // export result
+. esttab using "./replicate_table.tex", replace label title (table\label{tab1})  keep("1.black#c.fracwhite" "age" "all_star" "starter" "home
+> " "attend" "out_cont" "coach_black")
+(output written to ./replicate_table.tex)
+
+. 
+. est clear
+
+. 
+. /*=================================*/
+. log close labour_winter_pset1_Po_Jui_Huang
+      name:  labour_winter_pset1_Po_Jui_Huang
+       log:  C:\Users\user0522\Documents\GitHub\predoc-coding-sample-Po-Jui-Huang\labour_econ_winter_pset\labour_winter_pset1_Po-Jui_Huang.l
+> og
+  log type:  text
+ closed on:  30 Jan 2026, 21:44:57
+--------------------------------------------------------------------------------------------------------------------------------------------
