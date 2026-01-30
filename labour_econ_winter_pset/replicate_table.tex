@@ -1,34 +1,64 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{table\label{tab1}}
+\caption{Balance Test Table \label{tab1}}
+\begin{tabular}{l*{10}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}\\
+                    &\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}&\multicolumn{1}{c}{(mean) fracwhite}\\
+                    &           p&           p&           p&           p&           p&           p&           p&           p&           p&           p\\
+\hline
+(mean) year         &        0.00&        0.00&        0.00&        0.00&        0.00&        0.00&        0.00&        0.00&        0.00&        0.00\\
+(sum) blackstarter\_home&            &        0.61&        0.60&        0.67&        0.64&            &        0.61&        0.60&        0.67&        0.64\\
+(sum) blackstarter\_away&            &        0.80&        0.79&        0.71&        0.73&            &        0.80&        0.79&        0.71&        0.73\\
+(sum) out\_cont\_home &            &            &        0.94&        0.91&        0.87&            &            &        0.94&        0.91&        0.87\\
+(sum) out\_cont\_away &            &            &        0.47&        0.49&        0.54&            &            &        0.47&        0.49&        0.54\\
+(mean) home\_team\_code&            &            &            &        0.36&        0.48&            &            &            &        0.36&        0.48\\
+(mean) away\_team\_code&            &            &            &        0.15&        0.14&            &            &            &        0.15&        0.14\\
+home\_team\_year      &            &            &            &            &        0.47&            &            &            &            &        0.47\\
+away\_team\_year      &            &            &            &            &        0.14&            &            &            &            &        0.14\\
+\hline
+col\_2\_1             &            &        0.85&            &            &            &            &        0.85&            &            &            \\
+col\_2\_2             &            &        0.85&            &            &            &            &        0.85&            &            &            \\
+col\_3\_1             &            &            &        0.74&            &            &            &            &        0.74&            &            \\
+col\_3\_2             &            &            &        0.92&            &            &            &            &        0.92&            &            \\
+col\_4\_1             &            &            &            &        0.22&            &            &            &            &        0.22&            \\
+col\_4\_2             &            &            &            &        0.69&            &            &            &            &        0.69&            \\
+col\_5\_1             &            &            &            &            &        0.26&            &            &            &            &        0.26\\
+col\_5\_2             &            &            &            &            &        0.58&            &            &            &            &        0.58\\
+\hline\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Replicated Regression Table \label{tab2}}
 \begin{tabular}{l*{3}{c}}
 \hline\hline
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
                     &\multicolumn{1}{c}{fouls\_rate}&\multicolumn{1}{c}{fouls\_rate}&\multicolumn{1}{c}{fouls\_rate}\\
 \hline
 black=1 $\times$ fracwhite&       0.198\sym{***}&       0.196\sym{**} &       0.196\sym{**} \\
-                    &      (3.45)         &      (2.70)         &      (2.69)         \\
+                    &      (3.49)         &      (2.70)         &      (2.69)         \\
 [1em]
-age                 &      -0.726\sym{***}&      -0.715\sym{***}&       1.771         \\
-                    &    (-16.97)         &    (-14.83)         &      (1.76)         \\
+age                 &      -0.726\sym{***}&      -0.715\sym{***}&       1.852         \\
+                    &    (-15.43)         &    (-14.83)         &      (1.84)         \\
 [1em]
 all-star            &      -0.382\sym{***}&      -0.434\sym{***}&      -0.436\sym{***}\\
-                    &    (-18.89)         &     (-6.94)         &     (-6.96)         \\
+                    &    (-18.83)         &     (-6.94)         &     (-6.96)         \\
 [1em]
 player was one of starting five for this game&      -0.988\sym{***}&      -1.003\sym{***}&      -1.004\sym{***}\\
-                    &    (-67.11)         &    (-25.11)         &    (-25.13)         \\
+                    &    (-67.54)         &    (-25.11)         &    (-25.13)         \\
 [1em]
 home team           &      -0.126\sym{***}&      -0.212\sym{***}&      -0.142\sym{***}\\
-                    &    (-12.22)         &     (-6.48)         &     (-3.40)         \\
+                    &    (-13.91)         &     (-6.48)         &     (-3.40)         \\
 [1em]
 attendance (1,000s) &     0.00833\sym{***}&     0.00345         &     0.00362         \\
-                    &      (5.56)         &      (0.75)         &      (0.79)         \\
+                    &      (5.04)         &      (0.75)         &      (0.79)         \\
 [1em]
-out of contention   &      -0.131\sym{***}&      -0.150\sym{*}  &      -0.138         \\
-                    &     (-5.27)         &     (-2.11)         &     (-1.93)         \\
+out of contention   &      -0.131\sym{***}&      -0.150\sym{*}  &      -0.137         \\
+                    &     (-5.22)         &     (-2.11)         &     (-1.92)         \\
 [1em]
-coach\_black         &      -0.106\sym{***}&     -0.0790         &     -0.0798\sym{*}  \\
-                    &     (-7.06)         &     (-1.95)         &     (-1.97)         \\
+coach\_black         &      -0.106\sym{***}&     -0.0790         &     -0.0799\sym{*}  \\
+                    &     (-7.09)         &     (-1.95)         &     (-1.97)         \\
 [1em]
 home\_black          &                     &                     &     -0.0845\sym{**} \\
                     &                     &                     &     (-2.69)         \\
