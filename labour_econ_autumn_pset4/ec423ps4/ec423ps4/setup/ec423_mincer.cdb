@@ -1,0 +1,2719 @@
+A00026.00    [VERSION_R26]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             VERSION_R26_1
+ 
+COMMENT: PUBLIC RELEASE IDENTIFICATION NUMBER
+ 
+    7071           1 TO 999
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:            458        Max:            458        Mean:                 458
+ 
+Lead In: None.
+Default Next Question: T50192.00
+--------------------------------------------------------------------------------
+R00001.00    [CASEID]                                       Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             IDENTIFICATION CODE
+ 
+ORIGINAL QUESTION NAME: CASEID
+ 
+NOTE: THIS NUMBER WAS ASSIGNED ACCORDING TO THE RECORD NUMBER OF EACH RESPONDENT
+ON THE TAPE. THE FIRST RESPONDENT WAS ASSIGNED ID#1, THE SECOND WAS ASSIGNED 
+ID#2, ETC.
+ 
+ACTUAL NUMBER
+ 
+UNIVERSE: All
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:          12686        Mean:              6343.5
+ 
+Lead In: None.
+Default Next Question: R00001.49
+--------------------------------------------------------------------------------
+R00003.00    [Q1-3_A~M]                                     Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             DATE OF BIRTH - MONTH
+ 
+ORIGINAL QUESTION NAME: S01Q01A
+ 
+FIRST, WHEN WERE YOU BORN?
+ 
+1 THRU 12 ACTUAL MONTH
+ 
+UNIVERSE: All
+ 
+    1126           1
+     991           2
+    1028           3
+     970           4
+    1015           5
+    1053           6
+    1114           7
+    1223           8
+    1225           9
+    1010          10
+     954          11
+     977          12
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:             12        Mean:                6.49
+ 
+Lead In: R00001.66[Default]
+Default Next Question: R00005.00
+--------------------------------------------------------------------------------
+R00005.00    [Q1-3_A~Y]                                     Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             DATE OF BIRTH - YEAR
+ 
+ORIGINAL QUESTION NAME: S01Q01A
+ 
+SEE R(3.)
+ 
+ACTUAL YEAR
+ 
+UNIVERSE: All
+ 
+    1680          57
+    1677          58
+    1722          59
+    1662          60
+    1530          61
+    1600          62
+    1550          63
+    1265          64
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:             57        Max:             64        Mean:               60.34
+ 
+Lead In: R00003.00[Default]
+Default Next Question: R00006.00
+--------------------------------------------------------------------------------
+R00065.00    [HGC-MOTHER]                                   Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED BY R'S MOTHER
+ 
+ORIGINAL QUESTION NAME: S01Q16
+ 
+WHAT IS THE HIGHEST GRADE OR YEAR OF REGULAR SCHOOL THAT YOUR MOTHER EVER 
+COMPLETED?
+ 
+UNIVERSE: R with mother/mother figure
+ 
+     132       0 NONE
+      24       1 1ST GRADE
+      87       2 2ND GRADE
+     183       3 3RD GRADE
+     173       4 4TH GRADE
+     198       5 5TH GRADE
+     421       6 6TH GRADE
+     260       7 7TH GRADE
+     801       8 8TH GRADE
+     698       9 9TH GRADE
+     999      10 10TH GRADE
+    1107      11 11TH GRADE
+    4817      12 12TH GRADE
+     364      13 1ST YR COL
+     561      14 2ND YR COL
+     178      15 3RD YR COL
+     647      16 4TH YR COL
+     101      17 5TH YR COL
+      92      18 6TH YR COL
+      14      19 7TH YR COL
+      21      20 8TH YR COL OR MORE
+       0      95 UNGRADED
+  -------
+   11878
+ 
+Refusal(-1)            3
+Don't Know(-2)       527
+Invalid Skip(-3)     251
+TOTAL =========>   12659   VALID SKIP(-4)      27     NON-INTERVIEW(-5)       0
+ 
+Lead In: R00061.00[Default]
+Default Next Question: R00066.00
+--------------------------------------------------------------------------------
+R00079.00    [HGC-FATHER]                                   Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED BY R'S FATHER
+ 
+ORIGINAL QUESTION NAME: S01Q23
+ 
+LET'S GO BACK TO YOUR FATHER NOW. WHAT IS THE HIGHEST GRADE OR YEAR OF REGULAR 
+SCHOOL THAT YOUR FATHER EVER COMPLETED?
+ 
+UNIVERSE: R with father/father figure
+ 
+     199       0 NONE
+      48       1 1ST GRADE
+     102       2 2ND GRADE
+     215       3 3RD GRADE
+     208       4 4TH GRADE
+     190       5 5TH GRADE
+     499       6 6TH GRADE
+     306       7 7TH GRADE
+     950       8 8TH GRADE
+     568       9 9TH GRADE
+     754      10 10TH GRADE
+     616      11 11TH GRADE
+    3694      12 12TH GRADE
+     286      13 1ST YR COL
+     558      14 2ND YR COL
+     162      15 3RD YR COL
+     899      16 4TH YR COL
+     151      17 5TH YR COL
+     209      18 6TH YR COL
+      56      19 7TH YR COL
+     210      20 8TH YR COL OR MORE
+       0      95 UNGRADED
+  -------
+   10880
+ 
+Refusal(-1)            3
+Don't Know(-2)      1150
+Invalid Skip(-3)     423
+TOTAL =========>   12456   VALID SKIP(-4)     230     NON-INTERVIEW(-5)       0
+ 
+Lead In: R00077.00[Default]
+Default Next Question: R00080.00
+--------------------------------------------------------------------------------
+R00091.00    [FAM-28A]                                      Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF SIBLINGS
+ 
+ORIGINAL QUESTION NAME: S01Q28A
+ 
+SEE R(90.)
+ 
+ACTUAL NUMBER
+ 
+UNIVERSE: All
+ 
+     362           0
+    1611           1
+    2530           2
+    2412           3
+    1783           4
+    1198           5
+     933           6
+     634           7
+     421           8
+     289           9
+     178          10
+     116          11
+      67          12
+      64          13
+      27          14
+      11          15
+      32          16 TO 99999: 16+
+  -------
+   12668
+ 
+Refusal(-1)            1
+Don't Know(-2)         3
+Invalid Skip(-3)      14
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              0        Max:             29        Mean:                3.85
+ 
+Lead In: R00090.00[Default]
+Default Next Question: R00092.00
+--------------------------------------------------------------------------------
+R01736.00    [SAMPLE_ID]                                    Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             SAMPLE IDENTIFICATION CODE
+ 
+ORIGINAL QUESTION NAME: S24Q01
+ 
+UNIVERSE: Entire Sample
+ 
+    2236       1 CROSS MALE WHITE
+     203       2 CROSS MALE WH. POOR
+     346       3 CROSS MALE BLACK
+     218       4 CROSS MALE HISPANIC
+    2279       5 CROSS FEMALE WHITE
+     198       6 CROSS FEMALE WH POOR
+     405       7 CROSS FEMALE BLACK
+     226       8 CROSS FEMALE HISPANIC
+     742       9 SUP MALE WH POOR
+    1105      10 SUP MALE BLACK
+     729      11 SUP MALE HISPANIC
+     901      12 SUP FEM WH POOR
+    1067      13 SUP FEMALE BLACK
+     751      14 SUP FEMALE HISPANIC
+     609      15 MIL MALE WHITE
+     162      16 MIL MALE BLACK
+      53      17 MIL MALE HISPANIC
+     342      18 MIL FEMALE WHITE
+      89      19 MIL FEMALE BLACK
+      25      20 MIL FEMALE HISPANIC
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+MARCH 1, 1986  NORC
+ 
+SEX CODE CHANGED ON 42 CASES
+ 
+Lead In: R01735.18[Default] R01735.19[Default] R01735.14[Default] 
+         R01735.16[Default] R01735.17[Default] R01735.15[Default] 
+         R01735.00[Default]
+Default Next Question: R01737.00
+--------------------------------------------------------------------------------
+R02147.00    [SAMPLE_RACE]                                  Survey Year: 78SCRN
+  PRIMARY VARIABLE
+
+ 
+             R'S RACIAL/ETHNIC COHORT FROM SCREENER
+ 
+UNIVERSE: Entire Sample
+ 
+    2002       1 HISPANIC
+    3174       2 BLACK
+    7510       3 NON-BLACK, NON-HISPANIC
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+AUGUST 26, 1980  DENNIS GREY
+ 
+DESCRIPTION:
+COHORT=3;
+IF R(1736.)=4 ! R(1736.)=8 ! R(1736.)=11 ! R(1736.)=14 THEN COHORT=1;
+IF R(1736.)=17 ! R(1736.)=20 THEN COHORT=1;
+IF R(1736.)=3 ! R(1736.)=7 ! R(1736.)=10 ! R(1736.)=13 THEN COHORT=2;
+IF R(1736.)=16 ! R(1736.)=19 THEN COHORT=2;
+R(2147.)=COHORT;
+ 
+Lead In: R02146.00[Default]
+Default Next Question: R02148.00
+--------------------------------------------------------------------------------
+R02148.00    [SAMPLE_SEX]                                   Survey Year: 1979
+  PRIMARY VARIABLE
+
+ 
+             SEX OF R
+ 
+UNIVERSE: Entire sample
+ 
+    6403       1 MALE
+    6283       2 FEMALE
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+AUGUST 26, 1980  DENNIS GREY
+MARCH 1, 1986  NORC
+ 
+DESCRIPTION:
+IF (R(1736.)>0 & R(1736.)<=4) ! (R(1736.)>=9 & R(1736.)<=11) THEN SEX=1;
+IF R(1736.)>=15 & R(1736.)<=17 THEN SEX=1;
+IF (R(1736.)>=5 & R(1736.)<=8) ! (R(1736.)>=12 & R(1736.)<=14) THEN SEX=
+IF R(1736.)>=18 & R(1736.)<=20 THEN SEX=2;
+R(2148.)=SEX;
+SEX CODE CHANGED ON 42 CASES
+ 
+Lead In: R02147.00[Default]
+Default Next Question: R02149.00
+--------------------------------------------------------------------------------
+R04101.00    [Q1-3_A~M]                                     Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             DATE OF BIRTH - MONTH
+ 
+ORIGINAL QUESTION NAME: S01D0114
+ 
+WE WOULD LIKE TO BEGIN THIS YEAR'S INTERVIEW BY CHECKING OUR
+BIRTHDATE INFORMATION, WHEN WERE YOU BORN?
+ 
+1 THRU 12 ACTUAL MONTH
+ 
+UNIVERSE: All
+ 
+       0           0: < 1
+    1087           1
+     938           2
+     982           3
+     925           4
+     981           5
+    1003           6
+    1072           7
+    1191           8
+    1169           9
+     981          10
+     927          11
+     939          12
+       0          13
+       0          14
+       0          15
+       0          16
+       0          17 TO 99999: 17+
+  -------
+   12195
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12195   VALID SKIP(-4)       0     NON-INTERVIEW(-5)     491
+ 
+Min:              1        Max:             12        Mean:                6.51
+ 
+Lead In: None.
+Default Next Question: R04103.00
+--------------------------------------------------------------------------------
+R04103.00    [Q1-3_A~Y]                                     Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             DATE OF BIRTH - YEAR
+ 
+ORIGINAL QUESTION NAME: S01D0118
+ 
+SEE R(4101.)
+ 
+ACTUAL YEAR
+ 
+UNIVERSE: All
+ 
+       0           0 TO 54: < 55
+       1          55
+       2          56
+    1590          57
+    1593          58
+    1630          59
+    1597          60
+    1478          61
+    1552          62
+    1516          63
+    1234          64
+       2          65
+       0          66
+       0          67
+       0          68
+       0          69
+       0          70
+       0          71 TO 99999: 71+
+  -------
+   12195
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12195   VALID SKIP(-4)       0     NON-INTERVIEW(-5)     491
+ 
+Min:             55        Max:             65        Mean:               60.37
+ 
+Lead In: R04101.00[Default]
+Default Next Question: R04104.00
+--------------------------------------------------------------------------------
+R06183.01    [AFQT-3]                                       Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             PROFILES, ARMED FORCES QUALIFICATION TEST (AFQT) PERCENTILE SCORE -
+             REVISED 2006
+ 
+ORIGINAL QUESTION NAME: *CREATED
+ 
+SEE ATTACHMENT 106 ADDENDUM FOR DEFINITIONS
+NOTE: (SEE R( 6182.))  3 IMPLIED DECIMAL PLACES
+ 
+ACTUAL PERCENTAGE
+ 
+UNIVERSE: All
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   11914   VALID SKIP(-4)     281     NON-INTERVIEW(-5)     491
+ 
+Min:              0        Max:         100000        Mean:            42395.61
+ 
+Lead In: None.
+Default Next Question: R06184.10
+--------------------------------------------------------------------------------
+T41815.00    [HH1-1]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             TYPE OF RESIDENCE R IS LIVING IN
+ 
+What type of residence or dwelling unit are you living in?
+ 
+(IF NECESSARY, READ) For example, are you living in your own residence or 
+dwelling unit, your parents' household, on- or off-base mililtary family 
+housing, a dorm or religious institute or something else?
+ 
+    6810      11 OWN DWELLING UNIT
+     122      19 RESPONDENT IN PARENT HOUSEHOLD
+       2      15 CONVENT, MONASTERY, OTHER RELIGIOUS INSTITUTE   (Go To 
+                      T41828.00)
+       0      13 OFF-BASE MILITARY FAMILY HOUSING
+       0      12 ON-BASE MILITARY FAMILY HOUSING
+       1      16 OTHER INDIVIDUAL QUARTERS (SPECIFY)   (Go To T41828.00)
+       0       1 OPEN BAY OR TROOP BARRACKS, ABOARD SHIP
+       0       2 BACHELOR ENLISTED OR OFFICER QUARTERS
+       1       3 DORMITORY, FRATERNITY OR SORORITY
+      26       5 JAIL
+      19       4 HOSPITAL
+      15       6 OTHER TEMPORARY INDIVIDUAL QUARTERS (SPECIFY)
+      28      17 LIVES WITH OTHER RELATIVES
+      13      18 LIVES AT FRIEND'S RESIDENCE
+      13      21 HOMELESS
+       6      25 MOTEL/HOTEL
+       4      26 GROUP HOME OR BOARDING HOUSE
+       8      32 NURSING HOME OR RETIREMENT FACILITY
+  -------
+    7068
+ 
+Refusal(-1)            2
+Don't Know(-2)         1
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T41811.00[Default]
+Default Next Question: T41816.00
+--------------------------------------------------------------------------------
+T41889.00    [R_REL-2]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             PRESENT RELIGIOUS AFFILIATION
+ 
+What is your present religion, if any?
+ 
+       8       1 PROTESTANT
+      31      11 CHRISTIAN, NO DENOMINATION GIVEN
+      17      12 NON-DENOMINATIONAL OR NO DENOMINATION KNOWN
+      63       2 BAPTIST
+       4       3 EPISCOPALIAN
+       6       4 LUTHERAN
+       7       5 METHODIST
+       2       6 PRESBYTERIAN
+      83       7 ROMAN CATHOLIC
+       2       8 JEWISH
+      27       9 OTHER (SPECIFY)
+      41      10 NONE, NO RELIGION
+  -------
+     291
+ 
+Refusal(-1)            4
+Don't Know(-2)         0
+TOTAL =========>     295   VALID SKIP(-4)    6776     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T41886.00[Default]
+Default Next Question: T41890.00
+--------------------------------------------------------------------------------
+T41899.00    [R_REL-3]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             FREQUENCY OF R'S RELIGIOUS ATTENDANCE
+ 
+In the past year, about how often have you attended religious services? More 
+than once a week, about once a week, two or three times a month, about once a 
+month, several times or less during the year, or not at all?
+NOTE: RESPONSE SET INVERTED FROM 1979 AND 1982 QUESTIONS (R00105.00 AND 
+R06559.00)
+ 
+      22       1 More than once a week
+      65       2 About once a week
+      40       3 Two or three times a month
+      19       4 About once a month
+      62       5 Several times a year or less
+      85       6 Not at all
+  -------
+     293
+ 
+Refusal(-1)            2
+Don't Know(-2)         0
+TOTAL =========>     295   VALID SKIP(-4)    6776     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T41893.00[Default] T41896.00[Default] T41898.00[Default]  
+         T41891.00[0:0] T41892.00[0:0] T41890.00[-2:-1] T41890.00[3:3] 
+         T41890.00[7:7] T41890.00[10:10] T41895.00[-2:-1] T41895.00[3:3] 
+         T41895.00[9:9] T41895.00[12:12]
+Default Next Question: T41900.00
+--------------------------------------------------------------------------------
+T41936.00    [Q2-CH-2]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             LIVE WITH A PARTNER FOR AT LEAST 3 MONTHS SINCE LAST INTERVIEW
+ 
+Since [Date of last interview], during the times that you were not married, did 
+you ever live with anyone as a domestic partner for a period of 3 months or 
+more?
+ 
+[(READ IF NECESSARY:) Please include time that you lived with your 
+(husband/wife) when you were not married.]
+ 
+     480       1 Yes   (Go To T41937.00)
+    2854       0 No
+  -------
+    3334
+ 
+Refusal(-1)            6
+Don't Know(-2)         0
+TOTAL =========>    3340   VALID SKIP(-4)    3731     NON-INTERVIEW(-5)    5615
+ 
+Lead In: None.
+Default Next Question: T41946.00
+--------------------------------------------------------------------------------
+T42010.00    [Q3-3]                                         Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE ATTENDED
+ 
+What is the highest grade of regular school you have ever attended?
+ 
+       0       1 1ST GRADE
+       0       2 2ND GRADE
+       0       3 3RD GRADE
+       0       4 4TH GRADE
+       0       5 5TH GRADE
+       0       6 6TH GRADE
+       0       7 7TH GRADE
+       2       8 8TH GRADE
+       1       9 9TH GRADE
+       3      10 10TH GRADE
+       5      11 11TH GRADE
+      24      12 12TH GRADE
+      22      13 1ST YEAR COLLEGE
+      46      14 2ND YEAR COLLEGE
+      31      15 3RD YEAR COLLEGE
+      39      16 4TH YEAR COLLEGE
+      10      17 5TH YEAR COLLEGE
+      28      18 6TH YEAR COLLEGE
+       5      19 7TH YEAR COLLEGE
+      28      20 8TH YEAR COLLEGE OR MORE
+       0      95 UNGRADED
+  -------
+     244
+ 
+Refusal(-1)            1
+Don't Know(-2)         0
+TOTAL =========>     245   VALID SKIP(-4)    6826     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T42007.00[Default] T42009.00[Default]
+Default Next Question: T42011.00
+--------------------------------------------------------------------------------
+T42011.00    [Q3-4]                                         Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED
+ 
+What is the highest grade or year of regular school that you have completed and 
+gotten credit for?
+ 
+       0       1 1ST GRADE
+       3       2 2ND GRADE
+       9       3 3RD GRADE
+      12       4 4TH GRADE
+       7       5 5TH GRADE
+      29       6 6TH GRADE
+      29       7 7TH GRADE
+     100       8 8TH GRADE
+     166       9 9TH GRADE
+     256      10 10TH GRADE
+     411      11 11TH GRADE
+    2878      12 12TH GRADE
+     414      13 1ST YEAR COLLEGE
+     875      14 2ND YEAR COLLEGE
+     198      15 3RD YEAR COLLEGE
+     974      16 4TH YEAR COLLEGE
+     111      17 5TH YEAR COLLEGE
+     328      18 6TH YEAR COLLEGE
+      69      19 7TH YEAR COLLEGE
+     188      20 8TH YEAR COLLEGE OR MORE
+       8      95 UNGRADED
+  -------
+    7065
+ 
+Refusal(-1)            3
+Don't Know(-2)         3
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T42004.00[Default] T42010.00[Default]
+Default Next Question: T42012.00
+--------------------------------------------------------------------------------
+T42466.00    [QES-23.01]                                    Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CURRENTLY WORKING AT JOB #01?
+ 
+[is this job current?]([QES-LOOP1 counter])==1
+ 
+COMMENT: Is R currently working for this employer?
+ 
+     601           0: 0  CONDITION DOES NOT APPLY   (Go To T42471.00)
+    5006           1: 1  CONDITION APPLIES
+  -------
+    5607
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5607   VALID SKIP(-4)    1464     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                 .89
+ 
+Lead In: T42451.00[Default] T42461.00[Default]  T42446.00[0:0] T42456.00[1:1]
+Default Next Question: T42530.00
+--------------------------------------------------------------------------------
+T42467.00    [QES-23.02]                                    Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CURRENTLY WORKING AT JOB #02?
+ 
+[is this job current?]([QES-LOOP1 counter])==1
+ 
+COMMENT: Is R currently working for this employer?
+ 
+     921           0: 0  CONDITION DOES NOT APPLY   (Go To T42472.00)
+     501           1: 1  CONDITION APPLIES
+  -------
+    1422
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    1422   VALID SKIP(-4)    5649     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                 .35
+ 
+Lead In: T42452.00[Default] T42462.00[Default]  T42447.00[0:0] T42457.00[1:1]
+Default Next Question: T42531.00
+--------------------------------------------------------------------------------
+T42535.00    [HOURS_WORKED_WEEK_ALL.01]                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             COMBINED HOURS WORKED PER WEEK, INCLUDING HOURS AT HOME JOB #01
+ 
+Hours worked per week, including hours at home
+ 
+COMMENT: Hours worked per week, including hours at home
+ 
+      16           0
+     103           1 TO 9
+     164          10 TO 19
+     375          20 TO 29
+     660          30 TO 39
+    3070          40 TO 49
+     739          50 TO 59
+     285          60 TO 69
+      84          70 TO 79
+      47          80 TO 89
+      14          90 TO 99
+      10         100 TO 99999999: 100+
+  -------
+    5567
+ 
+Refusal(-1)            4
+Don't Know(-2)        23
+Invalid Skip(-3)      13
+TOTAL =========>    5607   VALID SKIP(-4)    1464     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:               40.89
+ 
+Lead In: T42530.00[Default]
+Default Next Question: T42540.00
+--------------------------------------------------------------------------------
+T42536.00    [HOURS_WORKED_WEEK_ALL.02]                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             COMBINED HOURS WORKED PER WEEK, INCLUDING HOURS AT HOME JOB #02
+ 
+Hours worked per week, including hours at home
+ 
+COMMENT: Hours worked per week, including hours at home
+ 
+      14           0
+     246           1 TO 9
+     199          10 TO 19
+     165          20 TO 29
+     124          30 TO 39
+     426          40 TO 49
+     101          50 TO 59
+      52          60 TO 69
+      24          70 TO 79
+      13          80 TO 89
+       1          90 TO 99
+       2         100 TO 99999999: 100+
+  -------
+    1367
+ 
+Refusal(-1)            4
+Don't Know(-2)        31
+Invalid Skip(-3)      20
+TOTAL =========>    1422   VALID SKIP(-4)    5649     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:               29.62
+ 
+Lead In: T42531.00[Default]
+Default Next Question: T42541.00
+--------------------------------------------------------------------------------
+T42545.00    [QES-52D.01]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURS PER WEEK USUALLY WORKED (INCLUDES HOURS WORKED AT HOME) JOB #
+             01
+ 
+Including hours that you [(work/worked)] at your place of employment and any 
+hours worked at home, altogether how many hours per week [do/did] you usually 
+work at [(this job/current assignment or on-call job/business)]?  (PROBE: During
+the weeks when you [are/were] working).
+ 
+      14           0
+      22           1 TO 4
+      49           5 TO 9
+      55          10 TO 14
+      74          15 TO 19
+     166          20 TO 24
+     135          25 TO 29
+     230          30 TO 34
+     338          35 TO 39
+    2403          40 TO 44
+     502          45 TO 49
+     966          50 TO 99999999: 50+
+  -------
+    4954
+ 
+Refusal(-1)            3
+Don't Know(-2)        15
+Invalid Skip(-3)      12
+TOTAL =========>    4984   VALID SKIP(-4)    2087     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:               40.97
+ 
+Lead In: T42540.00[Default]
+Default Next Question: T42550.00
+--------------------------------------------------------------------------------
+T42546.00    [QES-52D.02]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURS PER WEEK USUALLY WORKED (INCLUDES HOURS WORKED AT HOME) JOB #
+             02
+ 
+Including hours that you [(work/worked)] at your place of employment and any 
+hours worked at home, altogether how many hours per week [do/did] you usually 
+work at [(this job/current assignment or on-call job/business)]?  (PROBE: During
+the weeks when you [are/were] working).
+ 
+      14           0
+      46           1 TO 4
+     107           5 TO 9
+      73          10 TO 14
+      60          15 TO 19
+      82          20 TO 24
+      42          25 TO 29
+      67          30 TO 34
+      46          35 TO 39
+     348          40 TO 44
+      61          45 TO 49
+     172          50 TO 99999999: 50+
+  -------
+    1118
+ 
+Refusal(-1)            3
+Don't Know(-2)        22
+Invalid Skip(-3)      18
+TOTAL =========>    1161   VALID SKIP(-4)    5910     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:               32.25
+ 
+Lead In: T42541.00[Default]
+Default Next Question: T42551.00
+--------------------------------------------------------------------------------
+T42550.00    [QES-52B.01]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURS PER WEEK USUALLY WORKED AT HOME JOB # 01
+ 
+How many of those [hours/wk usually worked for employer] hours per week [do/did]
+you usually work at [(this job/current assignment or on-call job/business)] at 
+home?  (ENTER '0' FOR 'NONE'.)
+ 
+    3942           0
+     281           1 TO 4
+     284           5 TO 9
+     176          10 TO 14
+      64          15 TO 19
+      77          20 TO 24
+      15          25 TO 29
+      27          30 TO 34
+      15          35 TO 39
+      47          40 TO 44
+      15          45 TO 49
+      22          50 TO 99999999: 50+
+  -------
+    4965
+ 
+Refusal(-1)            2
+Don't Know(-2)         5
+Invalid Skip(-3)      12
+TOTAL =========>    4984   VALID SKIP(-4)    2087     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:                2.48
+ 
+Lead In: T42545.00[Default]
+Default Next Question: T42555.00
+--------------------------------------------------------------------------------
+T42551.00    [QES-52B.02]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURS PER WEEK USUALLY WORKED AT HOME JOB # 02
+ 
+How many of those [hours/wk usually worked for employer] hours per week [do/did]
+you usually work at [(this job/current assignment or on-call job/business)] at 
+home?  (ENTER '0' FOR 'NONE'.)
+ 
+     937           0
+      59           1 TO 4
+      52           5 TO 9
+      36          10 TO 14
+      13          15 TO 19
+       6          20 TO 24
+       7          25 TO 29
+       4          30 TO 34
+       2          35 TO 39
+      13          40 TO 44
+       5          50 TO 99999999: 50+
+  -------
+    1134
+ 
+Refusal(-1)            1
+Don't Know(-2)         7
+Invalid Skip(-3)      19
+TOTAL =========>    1161   VALID SKIP(-4)    5910     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            100        Mean:                2.07
+ 
+Lead In: T42546.00[Default]
+Default Next Question: T42556.00
+--------------------------------------------------------------------------------
+T42590.00    [QES-53B.01]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             INT CHECK 2012 - R WORK MORE/LESS THAN 10 HOURS PER WEEK?  JOB # 01
+ 
+[Flag indicating whether worked at least 10 hours per week for employer]
+ 
+COMMENT: Check whether R worked at least 10 hours a week for this employer (see 
+previous question.)
+ 
+    4981           1: 1  CONDITION APPLIES   (Go To T42595.00)
+  -------
+    4981
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    4981   VALID SKIP(-4)    2090     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:              1        Mean:                   1
+ 
+Lead In: T42555.00[Default]
+Default Next Question: 
+--------------------------------------------------------------------------------
+T42591.00    [QES-53B.02]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             INT CHECK 2012 - R WORK MORE/LESS THAN 10 HOURS PER WEEK?  JOB # 02
+ 
+[Flag indicating whether worked at least 10 hours per week for employer]
+ 
+COMMENT: Check whether R worked at least 10 hours a week for this employer (see 
+previous question.)
+ 
+     197           0: 0  CONDITION DOES NOT APPLY
+     952           1: 1  CONDITION APPLIES   (Go To T42596.00)
+  -------
+    1149
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    1149   VALID SKIP(-4)    5922     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                 .83
+ 
+Lead In: T42556.00[Default]
+Default Next Question: 
+--------------------------------------------------------------------------------
+T42823.00    [INDALL-EMP.01]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             TYPE OF BUSINESS OR INDUSTRY (CENSUS 4 DIGIT, 00 CODES) (ALL) JOB 
+             #01
+ 
+ 
+SEE ATTACHMENT 3, INDUSTRY AND OCCUPATION CODES
+ 
+INCLUDES DATA FOR ALL R'S REPORTING EMPLOYER
+ 
+      64         170 TO 290: Agriculture, Forestry, Fishing, and Hunting
+      35         370 TO 490: Mining
+      70         570 TO 690: Utilities
+     369         770: Construction
+     612        1070 TO 3990: Manufacturing
+     160        4070 TO 4590: Wholesale Trade
+     441        4670 TO 5790: Retail Trade
+     334        6070 TO 6390: Transportation and Warehousing
+     105        6470 TO 6780: Information
+     239        6870 TO 6990: Finance and Insurance
+     107        7070 TO 7190: Real Estate and Rental and Leasing
+     277        7270 TO 7490: Professional, Scientific, and Technical Services
+     282        7570 TO 7790: Management, Administrative and Support, and Waste 
+                          Management Services
+     551        7860 TO 7890: Educational Services
+     839        7970 TO 8470: Health Care and Social Assistance
+     107        8560 TO 8590: Arts, Entertainment, and Recreation
+     225        8660 TO 8690: Accomodations and Food Services
+     260        8770 TO 9290: Other Services (Except Public Administration)
+     395        9370 TO 9870: Public Administration and Active Duty Military
+       8        9890: Armed Forces (for CPS)
+      17        9990: Uncodeable
+  -------
+    5497
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5497   VALID SKIP(-4)    1574     NON-INTERVIEW(-5)    5615
+ 
+Min:            170        Max:           9990        Mean:             6329.82
+ 
+Lead In: None.
+Default Next Question: T42828.00
+--------------------------------------------------------------------------------
+T42828.00    [OCCALL-EMP.01]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             OCCUPATION (CENSUS 4 DIGIT, 00 CODES) (ALL) JOB #01
+ 
+ 
+SEE ATTACHMENT 3, INDUSTRY AND OCCUPATION CODES
+ 
+INCLUDES DATA FOR ALL R'S REPORTING EMPLOYER
+ 
+     679          10 TO 430: Executive, Administrative and Managerial 
+                          Occupations
+     264         500 TO 950: Management Related Occupations
+     108        1000 TO 1240: Mathematical and Computer Scientists
+      83        1300 TO 1560: Engineers, Architects, Surveyers, Engineering and 
+                          Related Technicians
+      18        1600 TO 1760: Physical Scientists
+       9        1800 TO 1860: Social Scientists and Related Workers
+      15        1900 TO 1960: Life, Physical and Social Science Technicians
+     130        2000 TO 2060: Counselors, Sociala and Religious Workers
+      43        2100 TO 2150: Lawyers, Judges and Legal Support Workers
+     243        2200 TO 2340: Teachers
+      86        2400 TO 2550: Education, Training and Library Workers
+      58        2600 TO 2760: Entertainers and Performers, Sports and Related 
+                          Workers
+      41        2800 TO 2960: Media and Communications Workers
+     148        3000 TO 3260: Health Diagnosing and Treating Practitioners
+     257        3300 TO 3650: Health Care Technical and Support Occupations
+     139        3700 TO 3950: Protective Service Occupations
+     217        4000 TO 4160: Food Preparation and Serving Related Occupations
+     270        4200 TO 4250: Cleaning and Building Service Occupations
+      18        4300 TO 4430: Entertainment Attendants and Related Workers
+     190        4500 TO 4650: Personal Care and Service Workers
+     395        4700 TO 4960: Sales and Related Workers
+     771        5000 TO 5930: Office and Administrative Support Workers
+      28        6000 TO 6130: Farming, Fishing and Forestry Occupations
+     287        6200 TO 6940: Construction Trade and Extraction Workers
+     236        7000 TO 7620: Installation, Maintenance and Repairs Workers
+      84        7700 TO 7750: Production and Operating Workers
+      15        7800 TO 7850: Food Preparation Occupations
+     262        7900 TO 8960: Setters, Operators and Tenders
+     417        9000 TO 9750: Transportation and Material Moving Workers
+       9        9840: Armed Forces
+       7        9990: Uncodeable
+  -------
+    5528
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5528   VALID SKIP(-4)    1543     NON-INTERVIEW(-5)    5615
+ 
+Min:             10        Max:           9990        Mean:             4301.03
+ 
+Lead In: T42823.00[Default]
+Default Next Question: T42833.00
+--------------------------------------------------------------------------------
+T42829.00    [OCCALL-EMP.02]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             OCCUPATION (CENSUS 4 DIGIT, 00 CODES) (ALL) JOB #02
+ 
+ 
+SEE ATTACHMENT 3, INDUSTRY AND OCCUPATION CODES
+ 
+INCLUDES DATA FOR ALL R'S REPORTING EMPLOYER
+ 
+     149          10 TO 430: Executive, Administrative and Managerial 
+                          Occupations
+      54         500 TO 950: Management Related Occupations
+      21        1000 TO 1240: Mathematical and Computer Scientists
+       6        1300 TO 1560: Engineers, Architects, Surveyers, Engineering and 
+                          Related Technicians
+       7        1600 TO 1760: Physical Scientists
+       2        1800 TO 1860: Social Scientists and Related Workers
+       1        1900 TO 1960: Life, Physical and Social Science Technicians
+      37        2000 TO 2060: Counselors, Sociala and Religious Workers
+      10        2100 TO 2150: Lawyers, Judges and Legal Support Workers
+      62        2200 TO 2340: Teachers
+       7        2400 TO 2550: Education, Training and Library Workers
+      35        2600 TO 2760: Entertainers and Performers, Sports and Related 
+                          Workers
+      10        2800 TO 2960: Media and Communications Workers
+      36        3000 TO 3260: Health Diagnosing and Treating Practitioners
+      66        3300 TO 3650: Health Care Technical and Support Occupations
+      31        3700 TO 3950: Protective Service Occupations
+      64        4000 TO 4160: Food Preparation and Serving Related Occupations
+      71        4200 TO 4250: Cleaning and Building Service Occupations
+       8        4300 TO 4430: Entertainment Attendants and Related Workers
+      47        4500 TO 4650: Personal Care and Service Workers
+     129        4700 TO 4960: Sales and Related Workers
+     152        5000 TO 5930: Office and Administrative Support Workers
+       7        6000 TO 6130: Farming, Fishing and Forestry Occupations
+      67        6200 TO 6940: Construction Trade and Extraction Workers
+      50        7000 TO 7620: Installation, Maintenance and Repairs Workers
+      13        7700 TO 7750: Production and Operating Workers
+       2        7800 TO 7850: Food Preparation Occupations
+      45        7900 TO 8960: Setters, Operators and Tenders
+      89        9000 TO 9750: Transportation and Material Moving Workers
+       2        9840: Armed Forces
+       1        9990: Uncodeable
+  -------
+    1281
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    1281   VALID SKIP(-4)    5790     NON-INTERVIEW(-5)    5615
+ 
+Min:             10        Max:           9990        Mean:              4225.3
+ 
+Lead In: T42824.00[Default]
+Default Next Question: T42834.00
+--------------------------------------------------------------------------------
+T42833.00    [COWALL-EMP.01]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CLASS OF WORKER (ALL) JOB #01
+ 
+ 
+INCLUDES DATA FOR ALL R'S REPORTING EMPLOYER
+ 
+    1134           1: 1  Government
+    3099           2: 2  Private for profit company
+     493           3: 3  Non-profit organization (including tax exempt and 
+                          charitable)
+     692           4: 4  Self employed
+      63           5: 5  Working in family business
+  -------
+    5481
+ 
+Refusal(-1)            5
+Don't Know(-2)        99
+Invalid Skip(-3)      22
+TOTAL =========>    5607   VALID SKIP(-4)    1464     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:              5        Mean:                2.17
+ 
+Lead In: T42828.00[Default]
+Default Next Question: T43139.00
+--------------------------------------------------------------------------------
+T44296.00    [Q8-2.01]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF VOCATIONAL/TECHNICAL TRAINING PGMS LISTED AT LAST 
+             INTERVIEW? TRAINING DLI 01
+ 
+[Number of training programs coming in from info sheet]()
+ 
+COMMENT: Are there any training programs on the information sheet?
+ 
+    6842           0   (Go To T44299.00)
+     208           1
+      16           2
+       3           3
+  -------
+    7069
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              3        Mean:                 .04
+ 
+Lead In: T44294.00[1:1]
+Default Next Question: T44297.00
+--------------------------------------------------------------------------------
+T44341.00    [Q8-18]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             ATTENDED VOCATIONAL/TECHNICAL PGM OR ON THE JOB TRAINING SINCE LAST
+             INT? (TRAINING)
+ 
+Besides the training programs we've already talked about, SINCE [Date of last 
+interview](), did you attend any other training program or any other on-the-job 
+training designed to help people find a job, improve job skills, or learn a new 
+job?
+ 
+     641       1 Yes   (Go To T44342.00)
+    6421       0 No
+  -------
+    7062
+ 
+Refusal(-1)            3
+Don't Know(-2)         2
+Invalid Skip(-3)       2
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T44340.00[Default] T44310.00[Default]  T44338.00[0:0]
+Default Next Question: T44459.00
+--------------------------------------------------------------------------------
+T44670.00    [OCCALL-SPOUSE]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             RS SPOUSE'S OCCUPATION IN PREVIOUS CALENDAR YEAR? (2000 CENSUS 4 
+             DIGIT)
+ 
+(What kind of work did [name of (most recent) spouse/partner]() do? That is, 
+what was [name of (most recent) spouse/partner]()'s occupation at [his/her]() 
+main job in [calendar year prior to survey year]()?)
+(For example: plumber, typist, farmer, etc)
+SEE ATTACHMENT 3, INDUSTRY AND OCCUPATION CODES
+ 
+     620          10 TO 430: Executive, Administrative and Managerial 
+                          Occupations
+     297         500 TO 950: Management Related Occupations
+      92        1000 TO 1240: Mathematical and Computer Scientists
+      83        1300 TO 1560: Engineers, Architects, Surveyers, Engineering and 
+                          Related Technicians
+      19        1600 TO 1760: Physical Scientists
+      11        1800 TO 1860: Social Scientists and Related Workers
+      10        1900 TO 1960: Life, Physical and Social Science Technicians
+      77        2000 TO 2060: Counselors, Sociala and Religious Workers
+      38        2100 TO 2150: Lawyers, Judges and Legal Support Workers
+     223        2200 TO 2340: Teachers
+      49        2400 TO 2550: Education, Training and Library Workers
+      50        2600 TO 2760: Entertainers and Performers, Sports and Related 
+                          Workers
+      33        2800 TO 2960: Media and Communications Workers
+     172        3000 TO 3260: Health Diagnosing and Treating Practitioners
+     182        3300 TO 3650: Health Care Technical and Support Occupations
+     118        3700 TO 3950: Protective Service Occupations
+     149        4000 TO 4160: Food Preparation and Serving Related Occupations
+     202        4200 TO 4250: Cleaning and Building Service Occupations
+      14        4300 TO 4430: Entertainment Attendants and Related Workers
+       2        4460: Funeral Related Occupations
+     144        4500 TO 4650: Personal Care and Service Workers
+     402        4700 TO 4960: Sales and Related Workers
+     645        5000 TO 5930: Office and Administrative Support Workers
+      27        6000 TO 6130: Farming, Fishing and Forestry Occupations
+     299        6200 TO 6940: Construction Trade and Extraction Workers
+     215        7000 TO 7620: Installation, Maintenance and Repairs Workers
+      67        7700 TO 7750: Production and Operating Workers
+      21        7800 TO 7850: Food Preparation Occupations
+     224        7900 TO 8960: Setters, Operators and Tenders
+     406        9000 TO 9750: Transportation and Material Moving Workers
+       2        9800 TO 9830: Military Specific Occupations
+      16        9840: Armed Forces
+       3        9950: Not in Labor Force (ACS Code)
+     316        9990: Uncodeable
+  -------
+    5305
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)       5
+TOTAL =========>    5310   VALID SKIP(-4)    1761     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:           9990        Mean:             4601.96
+ 
+Lead In: None.
+Default Next Question: T44675.00
+--------------------------------------------------------------------------------
+T44782.00    [Q2-15A]                                       Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF WEEKS WORKED BY SPOUSE/PARTNER IN PREVIOUS CALENDAR YEAR
+ 
+During the 52 weeks of [calendar year prior to survey year](), how many weeks 
+did [name of (most recent) spouse/partner]() work at all jobs, either full-time 
+or part-time, not counting work around the house? Please include paid vacations 
+as time worked.
+ 
+      73           0   (Go To T44784.00)
+      46           1 TO 13
+      95          14 TO 26
+     144          27 TO 39
+     288          40 TO 48
+     143          49 TO 51
+    2417          52
+  -------
+    3206
+ 
+Refusal(-1)           89
+Don't Know(-2)       104
+Invalid Skip(-3)       2
+TOTAL =========>    3401   VALID SKIP(-4)    3670     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             52        Mean:               47.62
+ 
+Lead In: T44712.00[Default] T44723.00[Default] T44729.00[Default] 
+         T44777.00[Default] T44778.00[Default] T44780.00[Default] 
+         T44781.00[Default]  T44677.00[-1:-1] T44679.00[-1:-1] T44680.00[-1:-1] 
+         T44682.00[-2:-1] T44696.00[-2:-1] T44700.00[-2:-1] T44731.00[-1:-1] 
+         T44732.00[-1:-1] T44733.00[-2:-1] T44744.00[-1:-1] T44746.00[-2:-1] 
+         T44753.00[-1:-1] T44754.00[-1:-1] T44755.00[-2:-1] T44764.00[-1:-1] 
+         T44766.00[-2:-1]
+Default Next Question: T44783.00
+--------------------------------------------------------------------------------
+T44783.00    [Q2-15B]                                       Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURS PER WEEK WORKED DURING WEEKS WORKED BY SPOUSE/PARTNER IN 
+             PREVIOUS CALENDAR YEAR
+ 
+In the weeks [name of (most recent) spouse/partner]() worked how many hours did 
+[S/HE]() usually work per week?
+ 
+       3           0
+      51           1 TO 9
+      94          10 TO 19
+     166          20 TO 29
+     359          30 TO 39
+    1758          40 TO 49
+     428          50 TO 59
+     198          60 TO 69
+      40          70 TO 79
+      13          80 TO 89
+       4          90 TO 99
+       3         100 TO 99999999: 100+
+  -------
+    3117
+ 
+Refusal(-1)           90
+Don't Know(-2)       119
+Invalid Skip(-3)       1
+TOTAL =========>    3327   VALID SKIP(-4)    3744     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            120        Mean:               40.91
+ 
+Lead In: T44782.00[Default]
+Default Next Question: T44784.00
+--------------------------------------------------------------------------------
+T48768.00    [Q10-2]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF BIOLOGICAL CHILDREN REPORTED
+ 
+RECCOUNT([biochild roster])
+ 
+COMMENT: Is there a child to check
+ 
+     579           0
+     590           1
+    1244           2
+     764           3
+     317           4
+     104           5
+      39           6
+      15           7
+       7           8
+       4           9
+       4          10 TO 999: 10+
+  -------
+    3667
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3667   VALID SKIP(-4)    3404     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             11        Mean:                2.08
+ 
+Lead In: T48767.00[Default]  T47482.00[1:1] T47460.00[5:5] T47460.00[8:8] 
+         T47460.00[99:99] T47471.00[8:8] T45506.00[0:0]
+Default Next Question: T48769.00
+--------------------------------------------------------------------------------
+T48907.00    [Q11-3]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             WOULD HEALTH PREVENT WORKING AT A JOB FOR PAY NOW?
+ 
+(INTERVIEWER: ENTERING HEALTH SECTION)  Would your health keep you from working 
+on a job for pay now?
+ 
+     216       1 Yes   (Go To T48910.00)
+     519       0 No
+  -------
+     735
+ 
+Refusal(-1)            0
+Don't Know(-2)         7
+TOTAL =========>     742   VALID SKIP(-4)    6329     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48906.00[Default]
+Default Next Question: T48908.00
+--------------------------------------------------------------------------------
+T48908.00    [Q11-4]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             DOES HEALTH LIMIT KIND OF WORK R CAN DO?
+ 
+(Are you/Would you be) limited in the kind of work you (could) do on a job for 
+pay because of your health?
+ 
+    1480       1 Yes
+    5354       0 No
+  -------
+    6834
+ 
+Refusal(-1)            3
+Don't Know(-2)        14
+Invalid Skip(-3)       2
+TOTAL =========>    6853   VALID SKIP(-4)     218     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48905.00[Default] T48907.00[Default]  T48906.00[1:1]
+Default Next Question: T48909.00
+--------------------------------------------------------------------------------
+T48909.00    [Q11-5]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             DOES HEALTH LIMIT AMOUNT OF WORK R CAN DO?
+ 
+(Are you/Would you be) limited in the amount of work you (could) do because of 
+your health?
+ 
+    1389       1 Yes
+    5442       0 No
+  -------
+    6831
+ 
+Refusal(-1)            1
+Don't Know(-2)        17
+Invalid Skip(-3)       4
+TOTAL =========>    6853   VALID SKIP(-4)     218     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48908.00[Default]
+Default Next Question: T48910.00
+--------------------------------------------------------------------------------
+T48910.00    [Q11-5A]                                       Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             INT CHECK - DOES R HAVE HEALTH LIMITATIONS - ITEMS Q11-4 OR Q11-5 
+             "YES"?
+ 
+(([Would your health keep you from working now?]==1) || ([Limited in kind of 
+work due to accident or injury?]==1) || ([Limited in amount of work due to 
+accident or injury?]==1))
+ 
+COMMENT: Check if R has reported a health limitation which affects work.
+ 
+    5305           0: 0  CONDITION DOES NOT APPLY
+    1764           1: 1  CONDITION APPLIES   (Go To T48911.00)
+  -------
+    7069
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                 .25
+ 
+Lead In: T48909.00[Default]  T48907.00[1:1]
+Default Next Question: T48915.00
+--------------------------------------------------------------------------------
+T48913.00    [Q11-7]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             WHEN DID HEALTH LIMITATIONS BEGAN
+ 
+Since what month and year have you had this limitation [" "/Other than your 
+pregnancy]?
+ 
+    1692       1 SELECT TO ENTER DATE   (Go To T48914.00)
+      43       0 IF VOLUNTEERED: 'ALL MY LIFE'
+  -------
+    1735
+ 
+Refusal(-1)            4
+Don't Know(-2)        25
+TOTAL =========>    1764   VALID SKIP(-4)    5307     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48912.00[Default]  T48911.00[1:1]
+Default Next Question: T48915.00
+--------------------------------------------------------------------------------
+T48920.00    [Q11-CARE-1]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             ANYONE IN R'S HOUSEHOLD BESIDES R DISABLED OR CHRONICALLY ILL?
+ 
+Is anyone in your household (besides you) disabled or chronically ill?
+ 
+     818       1 Yes   (Go To T48921.01)
+    6245       0 No
+  -------
+    7063
+ 
+Refusal(-1)            4
+Don't Know(-2)         1
+Invalid Skip(-3)       1
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48914.00[Default] T48919.00[Default] T48917.00[Default] 
+         T48916.00[Default]  T48918.00[0:0]
+Default Next Question: T48925.00
+--------------------------------------------------------------------------------
+T48922.00    [Q11-CARE-2CNT]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF PEOPLE IN R HOUSEHOLD DISABLED OR CHRONICALLY ILL
+ 
+SELECTEDINSELECTION([Q11-CARE-2])
+ 
+      23           0
+     756           1
+      37           2
+       1           4
+       1           5
+  -------
+     818
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     818   VALID SKIP(-4)    6253     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              5        Mean:                1.03
+ 
+Lead In: T48921.01[Default]
+Default Next Question: T48923.00
+--------------------------------------------------------------------------------
+T48923.00    [Q11-CARE-3]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R SPEND TIME REGULARLY CARING FOR DISABLED OR CHRONICALLY ILL 
+             HOUSEHOLD MEMBER?
+ 
+Do you regularly spend time helping or taking care of [this person/these 
+people]?
+ 
+     569       1 Yes   (Go To T48924.00)
+     248       0 No
+  -------
+     817
+ 
+Refusal(-1)            1
+Don't Know(-2)         0
+TOTAL =========>     818   VALID SKIP(-4)    6253     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48922.00[Default]
+Default Next Question: T48925.00
+--------------------------------------------------------------------------------
+T48924.00    [Q11-CARE-3B]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             # HRS SPENDS REGULARLY CARING FOR DISABLED OR CHRONICALLY ILL 
+             HOUSEHOLD MEMBER
+ 
+About how many hours per week do you spend doing this?
+ 
+ 
+        ENTER # OF HOURS
+ 
+       9           0
+     468           1 TO 99
+      56         100 TO 199
+  -------
+     533
+ 
+Refusal(-1)            0
+Don't Know(-2)        36
+TOTAL =========>     569   VALID SKIP(-4)    6502     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:               36.58
+ 
+Lead In: T48923.00[1:1]
+Default Next Question: T48925.00
+--------------------------------------------------------------------------------
+T48925.00    [Q11-CARE-4]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R SPEND TIME REGULARLY CARING FOR DISABLED OR CHRONICALLY ILL 
+             RELATIVE OR FRIEND OUTSIDE HOUSEHOLD?
+ 
+Do you regularly spend time helping or taking care of a relative or friend who 
+does not live in your household?
+ 
+     734       1 Yes   (Go To T48926.00)
+    6332       0 No
+  -------
+    7066
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)       3
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48920.00[Default] T48923.00[Default] T48924.00[Default]
+Default Next Question: T48927.00
+--------------------------------------------------------------------------------
+T48926.00    [Q11-CARE-4B]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             # HRS SPENDS REGULARLY CARING FOR DISABLED OR CHRONICALLY ILL 
+             PERSON OUTSIDE OF HOUSEHOLD
+ 
+About how many hours per week do you spend doing this?
+ 
+ 
+        ENTER # OF HOURS
+ 
+      13           0
+     696           1 TO 99
+       6         100 TO 199
+  -------
+     715
+ 
+Refusal(-1)            1
+Don't Know(-2)        18
+TOTAL =========>     734   VALID SKIP(-4)    6337     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            168        Mean:               11.13
+ 
+Lead In: T48925.00[1:1]
+Default Next Question: T48927.00
+--------------------------------------------------------------------------------
+T48927.00    [Q11-9]                                        Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             WEIGHT OF R
+ 
+How much do you weigh?
+ 
+(ENTER POUNDS)
+ 
+       6          50 TO 74
+      15          75 TO 99
+     281         100 TO 124
+     898         125 TO 149
+    1499         150 TO 174
+    1640         175 TO 199
+    1223         200 TO 224
+     685         225 TO 249
+     690         250 TO 99999999: 250+
+  -------
+    6937
+ 
+Refusal(-1)          101
+Don't Know(-2)        31
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Min:             58        Max:            461        Mean:              189.02
+ 
+Lead In: T48925.00[Default] T48926.00[Default]
+Default Next Question: T48928.00
+--------------------------------------------------------------------------------
+T48928.00    [Q11-10_A]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R HEIGHT IN FEET
+ 
+How tall are you?
+ 
+(INTERVIEWER: IF R ANSWERS ONLY IN FEET OR ONLY IN INCHES, LEAVE OTHER FIELD 
+BLANK.)
+ 
+ 
+        ENTER FEET:
+ 
+     116           4
+    5806           5
+    1123           6
+  -------
+    7045
+ 
+Refusal(-1)           10
+Don't Know(-2)        12
+TOTAL =========>    7067   VALID SKIP(-4)       4     NON-INTERVIEW(-5)    5615
+ 
+Min:              4        Max:              6        Mean:                5.14
+ 
+Lead In: T48927.00[Default]
+Default Next Question: T48929.00
+--------------------------------------------------------------------------------
+T48929.00    [Q11-10_B]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R HEIGHT IN INCHES
+ 
+How tall are you?
+ 
+ 
+        ENTER INCHES:
+ 
+     627           0
+     505           1
+     725           2
+     538           3
+     691           4
+     615           5
+     635           6
+     563           7
+     538           8
+     499           9
+     536          10
+     556          11
+       5          12
+       1          13
+       2          15 TO 99: 15+
+  -------
+    7036
+ 
+Refusal(-1)           11
+Don't Know(-2)        17
+TOTAL =========>    7064   VALID SKIP(-4)       7     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             45        Mean:                5.34
+ 
+Lead In: T48928.00[Default]
+Default Next Question: T48930.00
+--------------------------------------------------------------------------------
+T48942.00    [Q11-GENHLTH-PRV1]                             Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R HAVE HEALTH CARE PROVIDER TO SEE WHEN SICK OR NEED HEALTH ADVICE?
+ 
+Do you have a health care provider that you can see when you are sick or need 
+advice about your health?
+ 
+    6212       1 Yes   (Go To T48943.00)
+     852       0 No
+  -------
+    7064
+ 
+Refusal(-1)            1
+Don't Know(-2)         0
+Invalid Skip(-3)       4
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48941.00[Default]
+Default Next Question: T48944.00
+--------------------------------------------------------------------------------
+T48943.00    [Q11-GENHLTH-PRV2]                             Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             PLACE R MOST OFTEN GOES FOR HEALTH CARE
+ 
+What kind of place do you go to most often for this care—is it a clinic, 
+doctor's office, emergency room, or some other place?
+ 
+    1399       1 Clinic or health center
+    4518       2 Doctor’s office or HMO
+     112       3 Hospital emergency room
+     164       4 Some other place
+      19       5 Don’t go to one place most often
+  -------
+    6212
+ 
+Refusal(-1)            3
+Don't Know(-2)         1
+TOTAL =========>    6216   VALID SKIP(-4)     855     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48942.00[1:1]
+Default Next Question: T48944.00
+--------------------------------------------------------------------------------
+T48944.00    [Q11-GENHLTH_4A]                               Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOW LONG SINCE LAST PHYSICAL EXAM
+ 
+About how long has it been since your last general physical exam or routine 
+checkup by a medical doctor or other health professional? Do not include a visit
+about a specific problem.
+ 
+Has it been...(READ CATEGORIES AS NECESSARY)?
+ 
+      30       0 Never
+    5377       1 A year ago or less
+     663       2 More than 1 year but not more than 2 years
+     350       3 More than 2 years but not more than 3 years
+     215       4 More than 3 years but not more than 5 years
+     412       5 Over 5 years ago
+  -------
+    7047
+ 
+Refusal(-1)            3
+Don't Know(-2)        19
+TOTAL =========>    7069   VALID SKIP(-4)       2     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48942.00[Default] T48943.00[Default]
+Default Next Question: T48945.00
+--------------------------------------------------------------------------------
+T48972.00    [Q11-79]                                       Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R COVERED BY ANY HEALTH/HOSPITALIZATION PLAN
+ 
+Are you covered by any kind of health insurance or some other kind of health 
+care plan? (Include health insurance obtained through employment or purchased 
+directly as well as government programs like Medicaid that provide medical care 
+or help pay medical bills.)
+ 
+(PROBE IF NECESSARY:) Examples of health and hospitalization insurance plans 
+include Blue Cross, Blue Shield, [Medicaid or a Medicaid alternative plan such 
+as [name of state Medicaid Program].
+ 
+    6248       1 Yes   (Go To T48973.00)
+     803       0 No
+  -------
+    7051
+ 
+Refusal(-1)           10
+Don't Know(-2)         6
+TOTAL =========>    7067   VALID SKIP(-4)       4     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48971.00[Default]
+Default Next Question: T48976.00
+--------------------------------------------------------------------------------
+T48978.00    [Q11-80G]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R COVERED BY MEDICAID
+ 
+There is a program called Medicaid that pays for health care for persons in 
+need. In [RESPONDENT STATE] it is also called [Medicaid or a Medicaid 
+alternative plan such as [name of state Medicaid Program]. Are you covered by 
+Medicaid?  (INTERVIEWER: GENERALLY, IF R OR EMPLOYER DO NOT HAVE TO PAY, THE 
+INSURANCE IS MEDICAID OR A MEDICAID ALTERNATIVE. PLEASE SEE HELP SCREEN FOR LIST
+OF MEDICAID ALTERNATIVE PROVIDERS AND PLANS FOR [RESPONDENT STATE].)
+ 
+      55       1 Yes   (Go To T48980.00)
+     742       0 No
+  -------
+     797
+ 
+Refusal(-1)            1
+Don't Know(-2)         5
+TOTAL =========>     803   VALID SKIP(-4)    6268     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48977.00[1:1]
+Default Next Question: T48979.00
+--------------------------------------------------------------------------------
+T48979.00    [Q11-81C_1]                                    Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOW LONG SINCE R LAST HAD HEALTH CARE COVERAGE
+ 
+Not including single service plans, about how long has it been since you last 
+had health care coverage?
+ 
+      92       0 6 months or less
+      32       1 More than 6 months, but less than 1 year
+     117       2 More than 1 year, but not more than 3 years
+     381       3 More than 3 years
+     115       4 Never
+  -------
+     737
+ 
+Refusal(-1)            2
+Don't Know(-2)         9
+TOTAL =========>     748   VALID SKIP(-4)    6323     NON-INTERVIEW(-5)    5615
+ 
+Lead In: T48978.00[Default]
+Default Next Question: T48980.00
+--------------------------------------------------------------------------------
+T48980.00    [Q11-HLTHPLN-5CHK]                             Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R HAVE INSURANCE COVERAGE THROUGH CURRENT/PREVIOUS EMPLOYER?
+ 
+[r has no health care coverage?]==1
+ 
+COMMENT: /* Respondent reports some type of health insurance */
+ 
+    7067           0: 0  CONDITION DOES NOT APPLY
+  -------
+    7067
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7067   VALID SKIP(-4)       4     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              0        Mean:                   0
+ 
+Lead In: T48979.00[Default] T48977.00[Default]  T48978.00[1:1]
+Default Next Question: T48981.00
+--------------------------------------------------------------------------------
+T49158.00    [Q13-5_TRUNC]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             TOTAL INCOME FROM WAGES AND SALARY IN PAST CALENDAR YEAR  (TRUNC)
+ 
+[During/(Not counting any money you received from your military service...) 
+During] [calendar year prior to survey year], how much did you receive from 
+wages, salary, commissions, or tips from all (other) jobs, before deductions for
+taxes or anything else?
+topcoded item
+ 
+    1849           0
+      67           1 TO 999
+      53        1000 TO 1999
+      31        2000 TO 2999
+      34        3000 TO 3999
+      35        4000 TO 4999
+      49        5000 TO 5999
+      36        6000 TO 6999
+      34        7000 TO 7999
+      33        8000 TO 8999
+      27        9000 TO 9999
+     288       10000 TO 14999
+     259       15000 TO 19999
+     357       20000 TO 24999
+    1538       25000 TO 49999
+    2093       50000 TO 99999999: 50000+
+  -------
+    6783
+ 
+Refusal(-1)          136   (Go To T49161.00)
+Don't Know(-2)       145   (Go To T49159.00)
+TOTAL =========>    7064   VALID SKIP(-4)       7     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:         370314        Mean:            42403.01
+ 
+Lead In: T49150.00[Default] T49154.00[Default] T49152.00[Default]
+Default Next Question: T49165.00
+--------------------------------------------------------------------------------
+T50192.00    [TENURE1]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             TOTAL TENURE (IN WEEKS) WITH EMPLOYER AS OF INTERVIEW DATE JOB #01
+ 
+COMMENT: TENURE - FIRST JOB
+ 
+     549           1 TO 49
+     432          50 TO 99
+     392         100 TO 149
+     268         150 TO 199
+     268         200 TO 249
+     232         250 TO 299
+     177         300 TO 349
+     231         350 TO 399
+     191         400 TO 449
+     186         450 TO 499
+    2575         500 TO 99999999: 500+
+  -------
+    5501
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)     106
+TOTAL =========>    5607   VALID SKIP(-4)    1464     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:           2019        Mean:              590.85
+ 
+Lead In: A00026.00[Default]
+Default Next Question: T50193.00
+--------------------------------------------------------------------------------
+T50193.00    [TENURE2]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             TOTAL TENURE (IN WEEKS) WITH EMPLOYER AS OF INTERVIEW DATE JOB #02
+ 
+COMMENT: TENURE - SECOND JOB
+ 
+     273           1 TO 49
+     203          50 TO 99
+     142         100 TO 149
+      95         150 TO 199
+      81         200 TO 249
+      84         250 TO 299
+      60         300 TO 349
+      52         350 TO 399
+      54         400 TO 449
+      42         450 TO 499
+     283         500 TO 99999999: 500+
+  -------
+    1369
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)      53
+TOTAL =========>    1422   VALID SKIP(-4)    5649     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:           2000        Mean:              304.68
+ 
+Lead In: T50192.00[Default]
+Default Next Question: T50194.00
+--------------------------------------------------------------------------------
+T50197.00    [HRP1]                                         Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURLY RATE OF PAY JOB #01
+ 
+COMMENT: HOURLY RATE OF PAY - JOB # 1
+ACTUAL DOLLARS AND CENTS
+ 
+       2           0
+     168           1 TO 499
+     626         500 TO 999
+    1103        1000 TO 1499
+     928        1500 TO 1999
+     659        2000 TO 2499
+     510        2500 TO 2999
+     384        3000 TO 3499
+     238        3500 TO 3999
+     157        4000 TO 4499
+     121        4500 TO 4999
+     448        5000 TO 99999999: 5000+
+  -------
+    5344
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5344   VALID SKIP(-4)    1727     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:         110000        Mean:             2633.49
+ 
+Lead In: T50196.00[Default]
+Default Next Question: T50198.00
+--------------------------------------------------------------------------------
+T50199.00    [HRP2]                                         Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             HOURLY RATE OF PAY JOB #02
+ 
+COMMENT: HOURLY RATE OF PAY - JOB # 2
+ACTUAL DOLLARS AND CENTS
+ 
+       2           0
+      93           1 TO 499
+     263         500 TO 999
+     291        1000 TO 1499
+     162        1500 TO 1999
+     105        2000 TO 2499
+      83        2500 TO 2999
+      54        3000 TO 3499
+      32        3500 TO 3999
+      21        4000 TO 4499
+      16        4500 TO 4999
+      74        5000 TO 99999999: 5000+
+  -------
+    1196
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    1196   VALID SKIP(-4)    5875     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:         192307        Mean:             2435.42
+ 
+Lead In: T50198.00[Default]
+Default Next Question: T50200.00
+--------------------------------------------------------------------------------
+T50221.00    [SAMPWEIGHT]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             SAMPLING WEIGHT
+ 
+COMMENT: Sampling Weight
+1 THRU 9999999  SAMPLING WEIGHT (2 IMPLIED DECIMALS)
+ 
+    5615           0
+     226       50000 TO 99999
+    1056      100000 TO 149999
+     984      150000 TO 199999
+     649      200000 TO 249999
+     324      250000 TO 299999
+     257      300000 TO 399999
+     129      400000 TO 499999
+     386      500000 TO 599999
+     957      600000 TO 699999
+     921      700000 TO 799999
+     580      800000 TO 899999
+     279      900000 TO 999999
+     323     1000000 TO 1999999
+  -------
+   12686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>   12686   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              0        Max:        1603933        Mean:           264539.71
+ 
+Lead In: T50220.00[Default]
+Default Next Question: T50222.00
+--------------------------------------------------------------------------------
+T50223.00    [RNI]                                          Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             REASON FOR NONINTERVIEW
+ 
+COMMENT: Reason for Non-Interview
+ 
+    1121          61: 61  YOUTH REFUSAL/BREAKOFF
+     575          64: 64  UNABLE TO LOCATE YOUTH
+     812          65: 65  DECEASED
+     167          66: 66  OTHER
+      62          67: 67  DO NOT REFIELD (VERY DIFFICULT CASE)
+    1079          68: 68  MILITARY SAMPLE DROPPED
+     731          69: 69  SUPPLEMENTAL MALE POOR WHITE SAMPLE DROPPED
+     890          70: 70  SUPPLEMENTAL FEMALE POOR WHITE SAMPLE DROPPED
+      29          71: 71  YOUTH REFUSAL - VERY DIFFICULT CASE
+     116          72: 72  NOT FIELDED IN CURRENT SURVEY YEAR - VERY DIFFICULT 
+                          CASE
+      33          73: 73  NOT INTERVIEWED - INCARCERATED
+  -------
+    5615
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5615   VALID SKIP(-4)    7071     NON-INTERVIEW(-5)       0
+ 
+Min:             61        Max:             73        Mean:               66.26
+ 
+Lead In: T50222.00[Default]
+Default Next Question: T50225.00
+--------------------------------------------------------------------------------
+T50225.00    [FAMSIZE]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             FAMILY SIZE
+ 
+COMMENT: Family Size
+ 
+    1894           1
+    2385           2
+    1345           3
+     920           4
+     343           5
+     119           6
+      34           7
+      16           8
+       7           9
+       8          10 TO 999: 10+
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:             15        Mean:                2.45
+ 
+Lead In: T50223.00[Default]
+Default Next Question: T50226.00
+--------------------------------------------------------------------------------
+T50226.00    [TNFI_TRUNC]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             TOTAL NET FAMILY INCOME IN PAST CALENDAR YEAR *KEY* (TRUNCATED)
+ 
+COMMENT: Total Net Family Income in previous calendar year
+NOTE: FOR VARIABLE CREATION, SEE APPENDIX 2: TOTAL NET FAMILY INCOME TRUNCATED 
+VALUES ARE EQUAL TO THE AVERAGE VALUE OF THE TOP 2% OF RESPONDENTS WHO ARE U.S. 
+RESIDENTS.  IF THE NUMBER OF TRUNCATED VALUES EXCEEDS THAT WHICH WOULD HAVE BEEN
+TRUNCATED AT THE TRADITIONAL TRUNCATION LEVEL OF 100,001 FOR THIS ITEM, VALUES 
+OVER THAT TRADITIONAL TRUNCATION LEVEL ARE AVERAGED.  OVERSEAS RESPONDENTS WHOSE
+DOLLAR INCOME COULD NOT BE DETERMINED ARE CODED -3.
+ 
+ACTUAL DOLLARS
+ 
+     261           0
+      57           1 TO 999
+      49        1000 TO 1999
+      91        2000 TO 2999
+      33        3000 TO 3999
+      29        4000 TO 4999
+      30        5000 TO 5999
+      29        6000 TO 6999
+      38        7000 TO 7999
+      72        8000 TO 8999
+      77        9000 TO 9999
+     396       10000 TO 14999
+     268       15000 TO 19999
+     297       20000 TO 24999
+    1183       25000 TO 49999
+    3238       50000 TO 99999999: 50000+
+  -------
+    6148
+ 
+Refusal(-1)          247
+Don't Know(-2)       675
+Invalid Skip(-3)       1
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:         595986        Mean:            77266.42
+ 
+Lead In: T50225.00[Default]
+Default Next Question: T50228.00
+--------------------------------------------------------------------------------
+T50228.00    [POVSTATUS]                                    Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             FAMILY POVERTY STATUS IN PREVIOUS CALENDAR YEAR
+ 
+Family poverty status in past calendar year based on the income reported by the 
+respondent. See YEAR_INCOME for which year is represented.
+NOTE: THIS VARIABLE USES THE TOTAL NET FAMILY INCOME VARIABLE TO DETERMINE THE 
+POVERTY STATUS OF THE RESPONDENT'S HOUSEHOLD.  WHEREVER POSSIBLE, THIS VARIABLE 
+INCORPORATES THE FOLLOW-UP SELF-REPORTED RANGE AND UNFOLDING BRACKET QUESTIONS 
+PRESENT FOR MANY INCOME AMOUNTS TO ESTIMATE A VALUE FOR NON-RESPONDERS (THOSE 
+RESPONDING DON'T KNOW OR REFUSE TO ACTUAL INCOME AMOUNTS).
+ 
+    4965           0: NOT IN POVERTY
+    1183           1: IN POVERTY
+  -------
+    6148
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)     923
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                 .19
+ 
+Lead In: T50226.00[Default]
+Default Next Question: T50230.00
+--------------------------------------------------------------------------------
+T50231.00    [REGION]                                       Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             REGION OF CURRENT RESIDENCE
+ 
+COMMENT: REGION OF RESIDENCE
+NOTE: FOR VARIABLE CREATION SEE ATTACHMENT 104: GEOGRAPHIC REGIONS
+ 
+    1029           1: NORTHEAST
+    1611           2: NORTH CENTRAL
+    2984           3: SOUTH
+    1380           4: WEST
+  -------
+    7004
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)       5
+TOTAL =========>    7009   VALID SKIP(-4)      62     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:              4        Mean:                2.67
+ 
+Lead In: T50230.00[Default]
+Default Next Question: T50232.00
+--------------------------------------------------------------------------------
+T50232.00    [MARSTAT-COL]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS (COLLAPSED)
+ 
+COMMENT: Marital Status (Collapsed)
+ 
+    1124           1: NEVER MARRIED
+    3716           2: MARRIED, SPOUSE PRESENT
+    2231           3: OTHER
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:              3        Mean:                2.16
+ 
+Lead In: T50231.00[Default]
+Default Next Question: T50233.00
+--------------------------------------------------------------------------------
+T50233.00    [MARSTAT-KEY]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS
+ 
+COMMENT: Marital Status
+ 
+    1124           0: 0  NEVER MARRIED
+    3799           1: 1  MARRIED
+     342           2: 2  SEPARATED
+    1598           3: 3  DIVORCED
+     208           6: 6  WIDOWED
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              6        Mean:                1.49
+ 
+Lead In: T50232.00[Default]
+Default Next Question: T50234.00
+--------------------------------------------------------------------------------
+T50247.00    [HRSWK-PCY]                                    Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF HOURS WORKED IN PAST CALENDAR YEAR *KEY*
+ 
+COMMENT: Hours worked in past calendar year
+ 
+    1713           0
+     202           1 TO 499
+     236         500 TO 999
+     418        1000 TO 1499
+     647        1500 TO 1999
+    2546        2000 TO 2499
+     717        2500 TO 2999
+     299        3000 TO 3499
+     120        3500 TO 3999
+      52        4000 TO 4499
+      13        4500 TO 4999
+      28        5000 TO 99999999: 5000+
+  -------
+    6991
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)      80
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:           8736        Mean:             1591.07
+ 
+Lead In: T50240.00[Default]
+Default Next Question: T50248.00
+--------------------------------------------------------------------------------
+T50248.00    [WKSWK-PCY]                                    Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF WEEKS WORKED IN PAST CALENDAR YEAR *KEY*
+ 
+COMMENT: Weeks worked in past calendar year
+ 
+    1706           0
+     133           1 TO 13
+     160          14 TO 26
+     244          27 TO 39
+     263          40 TO 48
+     140          49 TO 51
+    4425          52
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             52        Mean:               36.94
+ 
+Lead In: T50247.00[Default]
+Default Next Question: T50249.00
+--------------------------------------------------------------------------------
+T50249.00    [WKSUEMP-PCY]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF WEEKS UNEMPLOYED IN PAST CALENDAR YEAR *KEY*
+ 
+COMMENT: Weeks Unemployed in Past Calendar Year
+ 
+    6247           0
+     220           1 TO 13
+     124          14 TO 26
+      91          27 TO 39
+      38          40 TO 48
+      12          49 TO 51
+     132          52
+  -------
+    6864
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)     207
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             52        Mean:                2.32
+ 
+Lead In: T50248.00[Default]
+Default Next Question: T50250.00
+--------------------------------------------------------------------------------
+T50250.00    [WKSOLF-PCY]                                   Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF WEEKS OUT OF LABOR FORCE IN PAST CALENDAR YEAR *KEY*
+ 
+COMMENT: Weeks out of labor force in past calendar year
+ 
+    4803           0
+     332           1 TO 13
+     168          14 TO 26
+     109          27 TO 39
+      73          40 TO 48
+      30          49 TO 51
+    1349          52
+  -------
+    6864
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)     207
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             52        Mean:               12.18
+ 
+Lead In: T50249.00[Default]
+Default Next Question: T50251.00
+--------------------------------------------------------------------------------
+T50251.00    [WKSUNACCT-PCY]                                Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             % OF WEEKS UNACCOUNTED FOR IN CALCULATING WEEKS WORKED IN PAST 
+             CALENDAR YEAR
+ 
+COMMENT: Weeks unaccounted for in past calendar year
+ 
+    6961           0
+      49           1 TO 9
+       2          10 TO 19
+       6          20 TO 29
+       5          30 TO 39
+       4          40 TO 49
+       6          50 TO 59
+       4          60 TO 69
+       5          70 TO 79
+       2          80 TO 89
+      27         100 TO 99999999: 100+
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:            100        Mean:                 .63
+ 
+Lead In: T50250.00[Default]
+Default Next Question: T50252.00
+--------------------------------------------------------------------------------
+T50259.00    [URBAN-RURAL]                                  Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             IS R'S CURRENT RESIDENCE URBAN/RURAL?
+ 
+COMMENT: R's in urban or rural residence?
+NOTE: SEE APPENDIX 6: URBAN-RURAL AND SMSA-CENTRAL CITY VARIABLES
+ 
+    1426           0: RURAL
+    5492           1: URBAN
+      86           2: UNKNOWN
+  -------
+    7004
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)       5
+TOTAL =========>    7009   VALID SKIP(-4)      62     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              2        Mean:                 .81
+ 
+Lead In: T50258.00[Default]
+Default Next Question: T50260.00
+--------------------------------------------------------------------------------
+T50260.00    [SMSARES]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             IS R'S CURRENT RESIDENCE IN SMSA?
+ 
+COMMENT: R's residence in SMSA?
+NOTE: SEE APPENDIX 6: URBAN-RURAL AND SMSA-CENTRAL CITY VARIABLES
+ 
+     508           1: NOT IN SMSA
+    3985           2: SMSA, NOT CENTRAL CITY
+    2461           3: SMSA, IN CENTRAL CITY
+      50           4: SMSA, CENTRAL CITY NOT KNOWN
+  -------
+    7004
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)       5
+TOTAL =========>    7009   VALID SKIP(-4)      62     NON-INTERVIEW(-5)    5615
+ 
+Min:              1        Max:              4        Mean:                2.29
+ 
+Lead In: T50259.00[Default]
+Default Next Question: T50261.00
+--------------------------------------------------------------------------------
+T50262.00    [JOBSNUM]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF DIFFERENT JOBS EVER REPORTED AS OF INTERVIEW DATE
+ 
+COMMENT: Number of jobs ever reported at interview date
+ 
+      32           0
+     689           1 TO 4
+    2074           5 TO 9
+    1959          10 TO 14
+    1269          15 TO 19
+     583          20 TO 24
+     279          25 TO 29
+     109          30 TO 34
+      49          35 TO 39
+      16          40 TO 44
+       8          45 TO 49
+       4          50 TO 99999999: 50+
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             60        Mean:               12.44
+ 
+Lead In: T50261.00[Default]
+Default Next Question: T50263.00
+--------------------------------------------------------------------------------
+T50314.00    [NUMKID14]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF CHILDREN EVER BORN
+ 
+ 
+NOTE:  SEE APPENDIX 5: SUPPLEMENTAL FERTILITY FILE VARIABLES
+ 
+    1318           0
+    1190           1
+    2270           2
+    1337           3
+     601           4
+     214           5
+      83           6
+      31           7
+      15           8
+       7           9
+       5          10 TO 999: 10+
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             11        Mean:                   2
+ 
+Lead In: T50313.00[Default]
+Default Next Question: T50315.00
+--------------------------------------------------------------------------------
+T50315.00    [NUMCH14]                                      Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             NUMBER OF BIO/STEP/ADOPTED CHILDREN IN HH
+ 
+ 
+NOTE:  SEE APPENDIX 5: SUPPLEMENTAL FERTILITY FILE VARIABLES
+ 
+    4100           0
+    1600           1
+     997           2
+     288           3
+      65           4
+      17           5
+       4           6
+  -------
+    7071
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    7071   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              6        Mean:                 .68
+ 
+Lead In: T50314.00[Default]
+Default Next Question: T50316.00
+--------------------------------------------------------------------------------
+T50316.00    [AGEYCH14]                                     Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             AGE OF YOUNGEST BIO/STEP/ADOPTED CHILD IN HOUSEHOLD
+ 
+ 
+NOTE:  SEE APPENDIX 5: SUPPLEMENTAL FERTILITY FILE VARIABLES
+ 
+     222           0 TO 10: <= 10
+      64          11
+      83          12
+      98          13
+     132          14
+     159          15
+     160          16
+     188          17
+     206          18
+     170          19
+     184          20
+     170          21
+     163          22
+     139          23
+     148          24
+     111          25
+     117          26
+      71          27
+      50          28
+      56          29
+     275          30 TO 99: 30+
+  -------
+    2966
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+Invalid Skip(-3)       5
+TOTAL =========>    2971   VALID SKIP(-4)    4100     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:             42        Mean:               19.88
+ 
+Lead In: T50315.00[Default]
+Default Next Question: T50317.00
+--------------------------------------------------------------------------------
+T50546.00    [EMPLOYER_CURFLAG.01]                          Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             R CURRENTLY WORKING FOR EMPLOYER 01
+ 
+     599           0: 0  CONDITION DOES NOT APPLY
+    5006           1: 1  CONDITION APPLIES
+  -------
+    5605
+ 
+Refusal(-1)            2
+Don't Know(-2)         0
+TOTAL =========>    5607   VALID SKIP(-4)    1464     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                 .89
+ 
+Lead In: T50560.00[Default]
+Default Next Question: T50547.00
+--------------------------------------------------------------------------------
+T50589.00    [EMPLOYER_CPSFLAG.01]                          Survey Year: 2014
+  PRIMARY VARIABLE
+
+ 
+             CPS FLAG
+ 
+       5           0: 0  CONDITION DOES NOT APPLY
+    5599           1: 1  CONDITION APPLIES
+  -------
+    5604
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5604   VALID SKIP(-4)    1467     NON-INTERVIEW(-5)    5615
+ 
+Min:              0        Max:              1        Mean:                   1
+ 
+Lead In: T50603.00[Default]
+Default Next Question: T50590.00
