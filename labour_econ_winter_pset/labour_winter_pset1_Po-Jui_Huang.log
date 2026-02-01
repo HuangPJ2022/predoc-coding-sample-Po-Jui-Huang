@@ -3,7 +3,7 @@
        log:  C:\Users\user0522\Documents\GitHub\predoc-coding-sample-Po-Jui-Huang\labour_econ_winter_pset\labour_winter_pset1_Po-Jui_Huang.l
 > og
   log type:  text
- opened on:  30 Jan 2026, 23:17:46
+ opened on:   1 Feb 2026, 21:20:00
 
 . 
 . /*===== generate variables & declare varlist =====*/
@@ -16,6 +16,10 @@
 (133,375 real changes made)
 
 . 
+. drop if home == away // incomplete info
+(10 observations deleted)
+
+. 
 . encode home_team, generate(home_team_code)
 
 . encode away_team, generate(away_team_code)
@@ -24,7 +28,7 @@
 
 . 
 . egen game_id = group(edate year home_team_code away_team_code)
-(15 missing values generated)
+(5 missing values generated)
 
 . encode player_id, gen(player)
 
@@ -32,7 +36,7 @@
 . gen black = 0
 
 . replace black = 1 if blackplayer == "Black"
-(214,291 real changes made)
+(214,281 real changes made)
 
 . 
 . /*===== balance test =====*/
@@ -82,85 +86,85 @@
 . eststo: reg fracwhite year
 
       Source |       SS           df       MS      Number of obs   =    13,325
--------------+----------------------------------   F(1, 13323)     =    582.72
-       Model |  37.7290514         1  37.7290514   Prob > F        =    0.0000
-    Residual |  862.618064    13,323  .064746533   R-squared       =    0.0419
+-------------+----------------------------------   F(1, 13323)     =    582.50
+       Model |  37.7131672         1  37.7131672   Prob > F        =    0.0000
+    Residual |  862.579377    13,323   .06474363   R-squared       =    0.0419
 -------------+----------------------------------   Adj R-squared   =    0.0418
-       Total |  900.347116    13,324  .067573335   Root MSE        =    .25445
+       Total |  900.292545    13,324  .067569239   Root MSE        =    .25445
 
 ------------------------------------------------------------------------------
    fracwhite |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        year |  -.0136966   .0005674   -24.14   0.000    -.0148087   -.0125844
-       _cons |   28.03031   1.133078    24.74   0.000     25.80931     30.2513
+        year |  -.0136938   .0005674   -24.14   0.000    -.0148059   -.0125816
+       _cons |   28.02478   1.133061    24.73   0.000     25.80382    30.24574
 ------------------------------------------------------------------------------
-(est6 stored)
+(est1 stored)
 
 . eststo: reg fracwhite year $blackstarter_li
 
       Source |       SS           df       MS      Number of obs   =    13,325
--------------+----------------------------------   F(3, 13321)     =    194.32
-       Model |  37.7501977         3  12.5833992   Prob > F        =    0.0000
-    Residual |  862.596918    13,321  .064754667   R-squared       =    0.0419
+-------------+----------------------------------   F(3, 13321)     =    194.24
+       Model |   37.733153         3  12.5777177   Prob > F        =    0.0000
+    Residual |  862.559392    13,321   .06475185   R-squared       =    0.0419
 -------------+----------------------------------   Adj R-squared   =    0.0417
-       Total |  900.347116    13,324  .067573335   Root MSE        =    .25447
+       Total |  900.292545    13,324  .067569239   Root MSE        =    .25446
 
 -----------------------------------------------------------------------------------
         fracwhite |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 ------------------+----------------------------------------------------------------
-             year |  -.0136632   .0005708   -23.94   0.000    -.0147821   -.0125443
-blackstarter_home |   .0013405   .0026014     0.52   0.606    -.0037586    .0064397
-blackstarter_away |   .0006497    .002594     0.25   0.802    -.0044349    .0057342
-            _cons |   27.95532   1.141717    24.49   0.000     25.71739    30.19325
+             year |  -.0136621   .0005708   -23.93   0.000    -.0147809   -.0125432
+blackstarter_home |   .0013363   .0026013     0.51   0.607    -.0037627    .0064353
+blackstarter_away |   .0005577   .0025939     0.22   0.830    -.0045267    .0056421
+            _cons |    27.9535   1.141694    24.48   0.000     25.71562    30.19138
 -----------------------------------------------------------------------------------
-(est7 stored)
+(est2 stored)
 
 . test $blackstarter_li
 
  ( 1)  blackstarter_home = 0
  ( 2)  blackstarter_away = 0
 
-       F(  2, 13321) =    0.16
-            Prob > F =    0.8494
+       F(  2, 13321) =    0.15
+            Prob > F =    0.8570
 
 . estadd scalar col_2_1 = r(p)
 
 added scalar:
-            e(col_2_1) =  .84935511
+            e(col_2_1) =  .85699358
 
 . test $blackstarter_li
 
  ( 1)  blackstarter_home = 0
  ( 2)  blackstarter_away = 0
 
-       F(  2, 13321) =    0.16
-            Prob > F =    0.8494
+       F(  2, 13321) =    0.15
+            Prob > F =    0.8570
 
 . estadd scalar col_2_2 = r(p)
 
 added scalar:
-            e(col_2_2) =  .84935511
+            e(col_2_2) =  .85699358
 
 . eststo: reg fracwhite year $blackstarter_li $out_cont_li
 
       Source |       SS           df       MS      Number of obs   =    13,325
--------------+----------------------------------   F(5, 13319)     =    116.70
-       Model |  37.7885523         5  7.55771047   Prob > F        =    0.0000
-    Residual |  862.558563    13,319  .064761511   R-squared       =    0.0420
+-------------+----------------------------------   F(5, 13319)     =    116.65
+       Model |  37.7715962         5  7.55431924   Prob > F        =    0.0000
+    Residual |  862.520948    13,319  .064758687   R-squared       =    0.0420
 -------------+----------------------------------   Adj R-squared   =    0.0416
-       Total |  900.347116    13,324  .067573335   Root MSE        =    .25448
+       Total |  900.292545    13,324  .067569239   Root MSE        =    .25448
 
 -----------------------------------------------------------------------------------
         fracwhite |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 ------------------+----------------------------------------------------------------
-             year |  -.0136699   .0005709   -23.94   0.000     -.014789   -.0125508
-blackstarter_home |   .0013599    .002602     0.52   0.601    -.0037403    .0064601
-blackstarter_away |   .0007059   .0025952     0.27   0.786     -.004381    .0057928
-    out_cont_home |   -.000692   .0094278    -0.07   0.941    -.0191718    .0177879
-    out_cont_away |  -.0068828   .0094534    -0.73   0.467    -.0254127    .0116471
-            _cons |   27.96886   1.141915    24.49   0.000     25.73054    30.20717
+             year |  -.0136688   .0005709   -23.94   0.000    -.0147878   -.0125497
+blackstarter_home |   .0013557   .0026019     0.52   0.602    -.0037444    .0064558
+blackstarter_away |    .000614   .0025951     0.24   0.813    -.0044727    .0057007
+    out_cont_home |  -.0007058   .0094276    -0.07   0.940    -.0191852    .0177736
+    out_cont_away |  -.0068865   .0094532    -0.73   0.466     -.025416    .0116431
+            _cons |   27.96705   1.141892    24.49   0.000     25.72877    30.20532
 -----------------------------------------------------------------------------------
-(est8 stored)
+(est3 stored)
 
 . test $out_cont_li
 
@@ -168,12 +172,12 @@ blackstarter_away |   .0007059   .0025952     0.27   0.786     -.004381    .0057
  ( 2)  out_cont_away = 0
 
        F(  2, 13319) =    0.30
-            Prob > F =    0.7437
+            Prob > F =    0.7432
 
 . estadd scalar col_3_1 = r(p)
 
 added scalar:
-            e(col_3_1) =  .74370147
+            e(col_3_1) =  .74318382
 
 . test $blackstarter_li $out_cont_li
 
@@ -183,12 +187,12 @@ added scalar:
  ( 4)  out_cont_away = 0
 
        F(  4, 13319) =    0.23
-            Prob > F =    0.9218
+            Prob > F =    0.9242
 
 . estadd scalar col_3_2 = r(p)
 
 added scalar:
-            e(col_3_2) =  .92184729
+            e(col_3_2) =  .92423136
 
 . eststo: reg fracwhite year $blackstarter_li $out_cont_li $team_fe
 
@@ -211,7 +215,7 @@ blackstarter_away |    .000987   .0026107     0.38   0.705    -.0041303    .0061
    away_team_code |   .0003611   .0002482     1.45   0.146    -.0001254    .0008476
             _cons |   27.98093   1.142696    24.49   0.000     25.74109    30.22078
 -----------------------------------------------------------------------------------
-(est9 stored)
+(est4 stored)
 
 . test $team_fe
 
@@ -266,7 +270,7 @@ blackstarter_away |   .0009072   .0026111     0.35   0.728     -.004211    .0060
    away_team_year |   .0000956   .0000649     1.47   0.141    -.0000317    .0002228
             _cons |   29.68945     3.1814     9.33   0.000     23.45345    35.92545
 -----------------------------------------------------------------------------------
-(est10 stored)
+(est5 stored)
 
 . test $team_year_fe
 
@@ -377,7 +381,7 @@ added scalar:
 . gen home_black = home * black
 
 . gen team_game = team_code * game_id
-(15 missing values generated)
+(5 missing values generated)
 
 . 
 . /*===== estimation =====*/
@@ -466,13 +470,13 @@ note: p_zerofg2per is probably collinear with the fixed effects (all partialled-
 note: p_zerofg3per is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
 note: p_zeroftper is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
 
-HDFE Linear regression                            Number of obs   =    266,972
-Absorbing 5 HDFE groups                           F(  38, 265474) =     134.06
+HDFE Linear regression                            Number of obs   =    266,962
+Absorbing 5 HDFE groups                           F(  38, 265464) =     134.08
                                                   Prob > F        =     0.0000
                                                   R-squared       =     0.1846
                                                   Adj R-squared   =     0.1800
                                                   Within R-sq.    =     0.0188
-                                                  Root MSE        =     3.0245
+                                                  Root MSE        =     3.0246
 
 ----------------------------------------------------------------------------------------
             fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
@@ -481,15 +485,15 @@ Absorbing 5 HDFE groups                           F(  38, 265474) =     134.06
                1.black |          0  (omitted)
                        |
      black#c.fracwhite |
-                    1  |   .1961762   .0726116     2.70   0.007     .0538594    .3384931
+                    1  |   .1959568   .0726128     2.70   0.007     .0536376     .338276
                        |
-                   age |  -.7145062   .0481957   -14.83   0.000    -.8089686   -.6200439
-              all_star |  -.4341708   .0626042    -6.94   0.000    -.5568732   -.3114683
-               starter |  -1.003104   .0399491   -25.11   0.000    -1.081403   -.9248047
-                  home |  -.2124911   .0327804    -6.48   0.000    -.2767397   -.1482424
-                attend |   .0034471   .0045853     0.75   0.452      -.00554    .0124343
-              out_cont |  -.1502422   .0713078    -2.11   0.035    -.2900036   -.0104808
-           coach_black |  -.0790254   .0404822    -1.95   0.051    -.1583694    .0003185
+                   age |  -.7143741    .048197   -14.82   0.000    -.8088389   -.6199092
+              all_star |  -.4339039   .0626063    -6.93   0.000    -.5566106   -.3111971
+               starter |  -1.003701   .0399509   -25.12   0.000    -1.082004   -.9253984
+                  home |  -.2123519   .0327821    -6.48   0.000     -.276604   -.1480998
+                attend |   .0034364   .0045855     0.75   0.454     -.005551    .0124238
+              out_cont |  -.1501888   .0713087    -2.11   0.035     -.289952   -.0104256
+           coach_black |  -.0793186   .0404867    -1.96   0.050    -.1586715    .0000343
                 height |          0  (omitted)
                 weight |          0  (omitted)
                 center |          0  (omitted)
@@ -510,37 +514,37 @@ Absorbing 5 HDFE groups                           F(  38, 265474) =     134.06
           p_zerofg2per |          0  (omitted)
           p_zerofg3per |          0  (omitted)
            p_zeroftper |          0  (omitted)
- fracwhite_p_zeroftper |   1.940538   2.770794     0.70   0.484    -3.490142    7.371219
-fracwhite_p_zerofg3per |   .1682054   .1968641     0.85   0.393    -.2176429    .5540537
-fracwhite_p_zerofg2per |   45.24559   51.49402     0.88   0.380     -55.6813    146.1725
-     fracwhite_p_ftper |   .4380597   .3982708     1.10   0.271    -.3425403     1.21866
-    fracwhite_p_fg3per |   .2588743   .3002796     0.86   0.389    -.3296655    .8474142
-    fracwhite_p_fg2per |   2.113137   .8231064     2.57   0.010     .4998713    3.726404
-     fracwhite_p_fouls |   .0213845   .0284751     0.75   0.453     -.034426     .077195
-      fracwhite_p_fg3a |   .0110405   .0170282     0.65   0.517    -.0223342    .0444153
-      fracwhite_p_fg2a |  -.0044758   .0095553    -0.47   0.639     -.023204    .0142524
-       fracwhite_p_fta |     -.0278   .0190494    -1.46   0.144    -.0651363    .0095364
-  fracwhite_p_turnover |   .0164045   .0551617     0.30   0.766    -.0917109    .1245199
-    fracwhite_p_steals |    .076136   .0529702     1.44   0.151    -.0276842    .1799561
-       fracwhite_p_rbo |  -.0217881   .0401694    -0.54   0.588     -.100519    .0569429
-       fracwhite_p_rbd |   .0185954   .0234597     0.79   0.428    -.0273849    .0645757
-    fracwhite_p_blocks |   .0748239   .0412992     1.81   0.070    -.0061213    .1557691
-   fracwhite_p_assists |  -.0044599   .0202803    -0.22   0.826    -.0442087    .0352889
-       fracwhite_p_min |   4.06e-06   3.86e-06     1.05   0.293    -3.51e-06    .0000116
-     fracwhite_ref3_id |   -.001643   .0007081    -2.32   0.020    -.0030309   -.0002552
-     fracwhite_ref2_id |  -.0012144   .0007046    -1.72   0.085    -.0025955    .0001667
-     fracwhite_ref1_id |  -.0005658   .0007947    -0.71   0.476    -.0021233    .0009918
-      fracwhite_center |  -.2327554   .0954074    -2.44   0.015    -.4197513   -.0457595
-      fracwhite_weight |  -.0011401   .0017099    -0.67   0.505    -.0044916    .0022113
-      fracwhite_height |   .0079735   .0149402     0.53   0.594    -.0213088    .0372558
- fracwhite_coach_black |  -.0399178   .0546162    -0.73   0.465     -.146964    .0671284
-    fracwhite_out_cont |   .0276126   .0973112     0.28   0.777    -.1631146    .2183398
-      fracwhite_attend |   .0072421   .0062529     1.16   0.247    -.0050135    .0194977
-     fracwhite_starter |   .0237217   .0542695     0.44   0.662    -.0826451    .1300885
-    fracwhite_all_star |   .0767872   .0836311     0.92   0.359    -.0871274    .2407018
-         fracwhite_age |  -.0147217   .0065489    -2.25   0.025    -.0275573    -.001886
-        fracwhite_home |   .1281497   .0451266     2.84   0.005     .0397028    .2165965
-                 _cons |   24.02135   1.582389    15.18   0.000     20.91991    27.12279
+ fracwhite_p_zeroftper |   1.941389   2.770816     0.70   0.484    -3.489335    7.372113
+fracwhite_p_zerofg3per |   .1681735   .1968659     0.85   0.393    -.2176783    .5540253
+fracwhite_p_zerofg2per |   45.24338   51.49443     0.88   0.380    -55.68431    146.1711
+     fracwhite_p_ftper |   .4357034   .3982904     1.09   0.274     -.344935    1.216342
+    fracwhite_p_fg3per |    .259449    .300289     0.86   0.388    -.3291094    .8480074
+    fracwhite_p_fg2per |   2.107029   .8231304     2.56   0.010     .4937161    3.720343
+     fracwhite_p_fouls |   .0215709   .0284758     0.76   0.449    -.0342409    .0773828
+      fracwhite_p_fg3a |   .0110036   .0170288     0.65   0.518    -.0223725    .0443797
+      fracwhite_p_fg2a |   -.004446   .0095556    -0.47   0.642    -.0231748    .0142828
+       fracwhite_p_fta |  -.0277408     .01905    -1.46   0.145    -.0650783    .0095967
+  fracwhite_p_turnover |   .0159435   .0551629     0.29   0.773    -.0921743    .1240613
+    fracwhite_p_steals |   .0762305   .0529715     1.44   0.150    -.0275923    .1800533
+       fracwhite_p_rbo |  -.0218497   .0401703    -0.54   0.586    -.1005825    .0568831
+       fracwhite_p_rbd |   .0185596   .0234601     0.79   0.429    -.0274214    .0645407
+    fracwhite_p_blocks |   .0750279   .0412998     1.82   0.069    -.0059186    .1559744
+   fracwhite_p_assists |  -.0043811   .0202811    -0.22   0.829    -.0441315    .0353692
+       fracwhite_p_min |   4.10e-06   3.86e-06     1.06   0.289    -3.48e-06    .0000117
+     fracwhite_ref3_id |  -.0016421   .0007081    -2.32   0.020    -.0030299   -.0002542
+     fracwhite_ref2_id |   -.001212   .0007047    -1.72   0.085    -.0025931    .0001691
+     fracwhite_ref1_id |  -.0005671   .0007947    -0.71   0.475    -.0021246    .0009904
+      fracwhite_center |  -.2329885   .0954111    -2.44   0.015    -.4199917   -.0459853
+      fracwhite_weight |  -.0011438     .00171    -0.67   0.504    -.0044953    .0022078
+      fracwhite_height |   .0079756   .0149407     0.53   0.593    -.0213077    .0372589
+ fracwhite_coach_black |  -.0395639   .0546207    -0.72   0.469    -.1466189    .0674911
+    fracwhite_out_cont |   .0275383   .0973126     0.28   0.777    -.1631918    .2182683
+      fracwhite_attend |   .0072525    .006253     1.16   0.246    -.0050033    .0195083
+     fracwhite_starter |   .0244131   .0542714     0.45   0.653    -.0819574    .1307836
+    fracwhite_all_star |   .0763452   .0836334     0.91   0.361    -.0875741    .2402644
+         fracwhite_age |  -.0147134    .006549    -2.25   0.025    -.0275494   -.0018775
+        fracwhite_home |   .1279932   .0451283     2.84   0.005      .039543    .2164434
+                 _cons |   24.02047   1.582451    15.18   0.000     20.91891    27.12203
 ----------------------------------------------------------------------------------------
 
 Absorbed degrees of freedom:
@@ -691,11 +695,242 @@ Absorbed degrees of freedom:
 . est clear
 
 . 
+. /*===== question 8: heterogeneity regression table =====*/
+. macro drop controls
+
+. global controls age all_star starter home out_cont coach_black
+
+. 
+. gen matchup = home_team + away_team
+
+. encode matchup , gen (matchup_code)
+
+. bys year matchup_code: egen attend_m = mean(attend)
+
+. gen attend_dm = attend - attend_m
+
+. 
+. // overall
+. eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe [aw=min], absorb($referee_fe player year) 
+(dropped 12 singleton observations)
+(MWFE estimator converged in 15 iterations)
+note: 1bn.black is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: fracwhite is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: height is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: weight is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: center is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+
+HDFE Linear regression                            Number of obs   =    266,962
+Absorbing 5 HDFE groups                           F(  11, 265491) =     455.60
+                                                  Prob > F        =     0.0000
+                                                  R-squared       =     0.1844
+                                                  Adj R-squared   =     0.1798
+                                                  Within R-sq.    =     0.0185
+                                                  Root MSE        =     3.0249
+
+-----------------------------------------------------------------------------------------------
+                   fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------------------+----------------------------------------------------------------
+                      1.black |          0  (omitted)
+                    attend_dm |  -.0308995   .0344487    -0.90   0.370    -.0984181     .036619
+                              |
+            black#c.attend_dm |
+                           1  |    .043379   .0376443     1.15   0.249    -.0304027    .1171607
+                              |
+                    fracwhite |          0  (omitted)
+                              |
+            black#c.fracwhite |
+                           1  |    .197906   .0611272     3.24   0.001     .0780984    .3177136
+                              |
+      c.attend_dm#c.fracwhite |   .0262105   .0479704     0.55   0.585    -.0678101    .1202312
+                              |
+black#c.attend_dm#c.fracwhite |
+                           1  |  -.0367701   .0524319    -0.70   0.483    -.1395351    .0659949
+                              |
+                          age |  -.7031806   .0481523   -14.60   0.000    -.7975578   -.6088033
+                     all_star |  -.3801879   .0261571   -14.53   0.000     -.431455   -.3289208
+                      starter |  -.9886176    .015513   -63.73   0.000    -1.019023   -.9582126
+                         home |  -.1254629   .0117192   -10.71   0.000    -.1484321   -.1024936
+                     out_cont |   -.134305   .0274478    -4.89   0.000    -.1881019   -.0805081
+                  coach_black |  -.1107248   .0171317    -6.46   0.000    -.1443024   -.0771472
+                       height |          0  (omitted)
+                       weight |          0  (omitted)
+                       center |          0  (omitted)
+                        _cons |   24.76838   1.344198    18.43   0.000     22.13379    27.40297
+-----------------------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+     ref1_id |        92           0          92     |
+     ref2_id |        94           5          89     |
+     ref3_id |        93           2          91    ?|
+      player |      1178           1        1177    ?|
+        year |        12           1          11    ?|
+-----------------------------------------------------+
+? = number of redundant parameters may be higher
+(est1 stored)
+
+. 
+. // home
+. eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe if home == 1 [aw=min], absorb($referee_fe player year) 
+(dropped 27 singleton observations)
+(MWFE estimator converged in 15 iterations)
+note: 1bn.black is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: fracwhite is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: home is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: height is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: weight is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: center is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+
+HDFE Linear regression                            Number of obs   =    133,353
+Absorbing 5 HDFE groups                           F(  10, 131909) =     242.79
+                                                  Prob > F        =     0.0000
+                                                  R-squared       =     0.1840
+                                                  Adj R-squared   =     0.1751
+                                                  Within R-sq.    =     0.0181
+                                                  Root MSE        =     3.0072
+
+-----------------------------------------------------------------------------------------------
+                   fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------------------+----------------------------------------------------------------
+                      1.black |          0  (omitted)
+                    attend_dm |  -.0581665   .0510485    -1.14   0.255    -.1582207    .0418876
+                              |
+            black#c.attend_dm |
+                           1  |   .0752364   .0552597     1.36   0.173    -.0330716    .1835445
+                              |
+                    fracwhite |          0  (omitted)
+                              |
+            black#c.fracwhite |
+                           1  |   .1790757   .0861275     2.08   0.038     .0102674     .347884
+                              |
+      c.attend_dm#c.fracwhite |   .0496158   .0716189     0.69   0.488    -.0907559    .1899875
+                              |
+black#c.attend_dm#c.fracwhite |
+                           1  |  -.0688235   .0774469    -0.89   0.374    -.2206181     .082971
+                              |
+                          age |   -.654819   .0679829    -9.63   0.000    -.7880643   -.5215738
+                     all_star |  -.3848337   .0367616   -10.47   0.000    -.4568858   -.3127815
+                      starter |  -.9915649   .0218831   -45.31   0.000    -1.034455   -.9486745
+                         home |          0  (omitted)
+                     out_cont |  -.0993912   .0388689    -2.56   0.011    -.1755736   -.0232088
+                  coach_black |  -.0737648   .0241951    -3.05   0.002    -.1211867   -.0263429
+                       height |          0  (omitted)
+                       weight |          0  (omitted)
+                       center |          0  (omitted)
+                        _cons |    23.2903   1.897466    12.27   0.000      19.5713     27.0093
+-----------------------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+     ref1_id |        92           0          92     |
+     ref2_id |        94           5          89     |
+     ref3_id |        93           2          91    ?|
+      player |      1152           1        1151    ?|
+        year |        12           1          11    ?|
+-----------------------------------------------------+
+? = number of redundant parameters may be higher
+(est2 stored)
+
+. 
+. // away
+. eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe if home == 0 [aw=min], absorb($referee_fe player year) 
+(dropped 29 singleton observations)
+(MWFE estimator converged in 15 iterations)
+note: 1bn.black is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: fracwhite is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: height is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: weight is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: center is probably collinear with the fixed effects (all partialled-out values are close to zero; tol = 1.0e-09)
+note: home omitted because of collinearity
+
+HDFE Linear regression                            Number of obs   =    133,565
+Absorbing 5 HDFE groups                           F(  10, 132121) =     247.15
+                                                  Prob > F        =     0.0000
+                                                  R-squared       =     0.1938
+                                                  Adj R-squared   =     0.1850
+                                                  Within R-sq.    =     0.0184
+                                                  Root MSE        =     3.0396
+
+-----------------------------------------------------------------------------------------------
+                   fouls_rate |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+------------------------------+----------------------------------------------------------------
+                      1.black |          0  (omitted)
+                    attend_dm |  -.0059395   .0470207    -0.13   0.899    -.0980991    .0862202
+                              |
+            black#c.attend_dm |
+                           1  |   .0169433   .0518689     0.33   0.744    -.0847189    .1186055
+                              |
+                    fracwhite |          0  (omitted)
+                              |
+            black#c.fracwhite |
+                           1  |   .2296013   .0872192     2.63   0.008     .0586533    .4005493
+                              |
+      c.attend_dm#c.fracwhite |    .005481   .0650713     0.08   0.933    -.1220576    .1330197
+                              |
+black#c.attend_dm#c.fracwhite |
+                           1  |  -.0111722   .0718956    -0.16   0.877    -.1520863    .1297418
+                              |
+                          age |  -.7517212   .0684176   -10.99   0.000    -.8858185   -.6176239
+                     all_star |  -.3769091   .0372658   -10.11   0.000    -.4499494   -.3038688
+                      starter |  -.9857892   .0220486   -44.71   0.000    -1.029004   -.9425743
+                         home |          0  (omitted)
+                     out_cont |  -.1795979   .0392483    -4.58   0.000     -.256524   -.1026718
+                  coach_black |   -.148661   .0244725    -6.07   0.000    -.1966267   -.1006952
+                       height |          0  (omitted)
+                       weight |          0  (omitted)
+                       center |          0  (omitted)
+                        _cons |   26.12005   1.910202    13.67   0.000     22.37609    29.86401
+-----------------------------------------------------------------------------------------------
+
+Absorbed degrees of freedom:
+-----------------------------------------------------+
+ Absorbed FE | Categories  - Redundant  = Num. Coefs |
+-------------+---------------------------------------|
+     ref1_id |        92           0          92     |
+     ref2_id |        94           5          89     |
+     ref3_id |        93           2          91    ?|
+      player |      1152           1        1151    ?|
+        year |        12           1          11    ?|
+-----------------------------------------------------+
+? = number of redundant parameters may be higher
+(est3 stored)
+
+. 
+. /*
+> // overall
+> eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_in
+> teraction $ref_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id [aw=min], absorb($r
+> eferee_fe player year) 
+> 
+> // home
+> eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_in
+> teraction $ref_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id if home == 1 [aw=mi
+> n], absorb($referee_fe player year) 
+> 
+> // away
+> eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_in
+> teraction $ref_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id if home == 0 [aw=mi
+> n], absorb($referee_fe player year) 
+> */
+. 
+. // export result
+. esttab using "./replicate_table.tex", append label title (Heterogeneity Regression Table \label{tab3})  keep("1.black#c.fracwhite" "1.blac
+> k#c.attend_dm#c.fracwhite") stats(N r2)
+(output written to ./replicate_table.tex)
+
+. 
+. est clear
+
 . /*=================================*/
 . log close labour_winter_pset1_Po_Jui_Huang
       name:  labour_winter_pset1_Po_Jui_Huang
        log:  C:\Users\user0522\Documents\GitHub\predoc-coding-sample-Po-Jui-Huang\labour_econ_winter_pset\labour_winter_pset1_Po-Jui_Huang.l
 > og
   log type:  text
- closed on:  30 Jan 2026, 23:20:18
+ closed on:   1 Feb 2026, 21:23:22
 --------------------------------------------------------------------------------------------------------------------------------------------

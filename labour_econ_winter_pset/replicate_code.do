@@ -13,6 +13,8 @@ gen away = home_team == opp_team
 gen away_team = away * team
 replace away_team = opp_team if away_team == ""
 
+drop if home == away // incomplete info
+
 encode home_team, generate(home_team_code)
 encode away_team, generate(away_team_code)
 encode team, gen(team_code)
@@ -140,6 +142,39 @@ esttab using "./replicate_table.tex", append label title (Replicated Regression 
 
 est clear
 
+/*===== question 8: heterogeneity regression table =====*/
+macro drop controls
+global controls age all_star starter home out_cont coach_black
+
+gen matchup = home_team + away_team
+encode matchup , gen (matchup_code)
+bys year matchup_code: egen attend_m = mean(attend)
+gen attend_dm = attend - attend_m
+
+// overall
+eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe [aw=min], absorb($referee_fe player year) 
+
+// home
+eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe if home == 1 [aw=min], absorb($referee_fe player year) 
+
+// away
+eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe if home == 0 [aw=min], absorb($referee_fe player year) 
+
+/*
+// overall
+eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_interaction $ref_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id [aw=min], absorb($referee_fe player year) 
+
+// home
+eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_interaction $ref_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id if home == 1 [aw=min], absorb($referee_fe player year) 
+
+// away
+eststo: reghdfe fouls_rate i.black##c.attend_dm##c.fracwhite $controls $player_fe  $player_perf $indicator $indicator_interaction $perf_interaction $ref_interaction $player_interaction $control_interaction player_year home_black team_game team_code game_id if home == 0 [aw=min], absorb($referee_fe player year) 
+*/
+
+// export result
+esttab using "./replicate_table.tex", append label title (Heterogeneity Regression Table \label{tab3})  keep("1.black#c.fracwhite" "1.black#c.attend_dm#c.fracwhite") stats(N r2)
+
+est clear
 /*=================================*/
 log close labour_winter_pset1_Po_Jui_Huang
 
