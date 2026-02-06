@@ -10,112 +10,82 @@ os.chdir("my path")
 ## import computed data
 df = pd.read_excel("./data/pre_reg_data.xlsx")
 
+## compute sectoral concentration
+total_va_4d_yr_series = df.groupby(['time', 'ind_4d'])['gross'].sum()
+total_va_4d_yr_df = total_va_4d_yr_series.to_frame().reset_index()
+cons_c = []
+for row in range(df.shape[0]):
+    target_time = df.iloc[row]['time']
+    target_ind_4d = df.iloc[row]['ind_4d']
+    total_va_4d_yr = total_va_4d_yr_df.loc[(total_va_4d_yr_df['time'] == target_time) & (total_va_4d_yr_df['ind_4d'] == target_ind_4d)]['gross'].item()
+    cons_c.append(df.iloc[row]['gross'] / total_va_4d_yr)
+df["cons_c"] = cons_c
+
+## rank companies within their industries by their gross profit
+df_c = pd.DataFrame()
+for yr in range(2000, 2024):
+    for indus in df['ind_4d'].unique():
+        temp_c = df.loc[(df['time'] == str(yr) + '/12') & (df['ind_4d'] == indus)].sort_values(by = 'gross', na_position = 'last')
+        temp_c['rank_c'] = np.argsort(-temp_c['gross']) + 1
+        df_c = pd.concat([df_c, temp_c], ignore_index=True)
+
+## merge ranking
+df = df.merge(df_c[['code', 'time', 'rank_c']], on = ['code', 'time'], how = 'left')
+
 ## keep non na value
-df = df.loc[(df['rank_a'] != 0)]
-df = df.loc[(df['rank_b'] != 0)]
-df = df.loc[(df['industry'] != 0)]
+df_ind_c = df.loc[(df['rank_c'] != 0)]
+df_ind_c = df_ind_c.dropna(subset = ['ind_4d'])
 
 ## compute individual firm hhi index(sum up in the later loop) 
 ## based on two industry classifications
-df['hhi_a'] = (df['cons_a']*100)**2
-df['hhi_b'] = (df['cons_b']*100)**2
+df_ind_c['hhi_c'] = (df_ind_c['cons_c']*100)**2
 
 #--------------------#
 ## prepare industry level panel(government classification)
-hhi_a = []
+hhi_c = []
 for yr in range(2002, 2024):
-    for indus in range(1, 9):
+
+    for indus in sorted(df_ind_c['ind_4d'].unique()):
         
-        n = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)].shape[0]
+        n = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)].shape[0]
 
-        pay = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['pay'].sum()
-        three_pay = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['pay'].sum()
-        twenty_pay = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['pay'].sum()
+        pay = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['pay'].sum()
+        three_pay = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['pay'].sum()
+        twenty_pay = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['pay'].sum()
 
-        total_va = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['gross'].sum()
-        three_va = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['gross'].sum()
-        twenty_va = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['gross'].sum()
+        total_va = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['gross'].sum()
+        three_va = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['gross'].sum()
+        twenty_va = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['gross'].sum()
         
-        total_k = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['K'].sum()
-        three_k = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['K'].sum()
-        twenty_k = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['K'].sum()
+        total_k = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['K'].sum()
+        three_k = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['K'].sum()
+        twenty_k = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['K'].sum()
 
-        total_l = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['numL'].sum()
-        three_l = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['numL'].sum()
-        twenty_l = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['numL'].sum()
+        total_l = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['numL'].sum()
+        three_l = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['numL'].sum()
+        twenty_l = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['numL'].sum()
 
-        total_ppe = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['buyPPE'].sum()
-        three_ppe = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['buyPPE'].sum()
-        twenty_ppe = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['buyPPE'].sum()
+        total_ppe = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['buyPPE'].sum()
+        three_ppe = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['buyPPE'].sum()
+        twenty_ppe = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['buyPPE'].sum()
 
-        total_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['revPer'].var()
-        three_va_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['revPer'].var()
-        twenty_va_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['revPer'].var()
+        total_var = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['revPer'].var()
+        three_va_var = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['revPer'].var()
+        twenty_va_var = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['revPer'].var()
 
-        total_tfp_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['tfp'].var()
-        three_tfp_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 4)]['tfp'].var()
-        twenty_tfp_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus) & (df['rank_a'] < 21)]['tfp'].var()
+        total_tfp_var = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['tfp'].var()
+        three_tfp_var = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 4)]['tfp'].var()
+        twenty_tfp_var = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus) & (df_ind_c['rank_c'] < 21)]['tfp'].var()
 
-        hhi = df.loc[(df['time'] == str(yr) + '/12') & (df['industry'] == indus)]['hhi_a'].sum()
+        hhi = df_ind_c.loc[(df_ind_c['time'] == str(yr) + '/12') & (df_ind_c['ind_4d'] == indus)]['hhi_c'].sum()
 
-        dict_a = {'year': yr, 'industry': indus, 'n': n, 'total_pay': pay, 'top3_pay': three_pay, 'top20_pay': twenty_pay,'total_va': total_va, \
+        dict_c = {'year': yr, 'ind_4d': indus, 'n': n, 'total_pay': pay, 'top3_pay': three_pay, 'top20_pay': twenty_pay,'total_va': total_va, \
                   'total_k': total_k, 'top3_k': three_k, 'top20_k': twenty_k, 'total_l': total_l, 'top3_l': three_l, 'top20_l': twenty_l, \
                   'top3_va': three_va, 'top20_va': twenty_va, 'total_ppe': total_ppe, 'top3_ppe': three_ppe, 'top20_ppe': twenty_ppe, 'hhi': hhi, \
                     'total_var': total_var, 'top3_var': three_va_var, 'top20_var': twenty_va_var, 'tfp_var': total_tfp_var, 'top3_tfp_var': three_tfp_var, 'top20_tfp_var':twenty_tfp_var}
-        hhi_a.append(dict_a)
+        hhi_c.append(dict_c)
 
-df_a = pd.DataFrame(hhi_a)
-
-## prepare industry level panel(TEJ database classification)
-hhi_b = []
-for yr in range(2002, 2024):
-
-    for indus in df['industry_tse'].unique():
-
-        n = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))].shape[0]
-
-        pay = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['pay'].sum()
-        three_pay = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['pay'].sum()
-        twenty_pay = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['pay'].sum()
-
-        total_va = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['gross'].sum()
-        three_va = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['gross'].sum()
-        twenty_va = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['gross'].sum()
-        
-        total_k = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['K'].sum()
-        three_k = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['K'].sum()
-        twenty_k = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['K'].sum()
-
-        total_l = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['numL'].sum()
-        three_l = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['numL'].sum()
-        twenty_l = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['numL'].sum()
-
-        total_ppe = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['buyPPE'].sum()
-        three_ppe = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['buyPPE'].sum()
-        twenty_ppe = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['buyPPE'].sum()
-
-        total_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['revPer'].var()
-        three_va_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['revPer'].var()
-        twenty_va_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['revPer'].var()
-
-        total_tfp_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['tfp'].var()
-        three_tfp_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 4)]['tfp'].var()
-        twenty_tfp_var = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus)) & (df['rank_b'] < 21)]['tfp'].var()
-
-        
-
-        hhi = df.loc[(df['time'] == str(yr) + '/12') & (df['industry_tse'] == str(indus))]['hhi_b'].sum()
-
-        dict_b = {'year': yr, 'industry': str(indus), 'n': n, 'total_pay': pay, 'top3_pay': three_pay, 'top20_pay': twenty_pay,'total_va': total_va, \
-                  'total_k': total_k, 'top3_k': three_k, 'top20_k': twenty_k, 'total_l': total_l, 'top3_l': three_l, 'top20_l': twenty_l, \
-                  'top3_va': three_va, 'top20_va': twenty_va, 'total_ppe': total_ppe, 'top3_ppe': three_ppe, 'top20_ppe': twenty_ppe, 'hhi': hhi, \
-                    'total_var': total_var, 'Top3_var': three_va_var, 'Top20_var': twenty_va_var, 'tfp_var': total_tfp_var, 'top3_tfp_var': three_tfp_var, 'top20_tfp_var':twenty_tfp_var}
-        
-        hhi_b.append(dict_b)
-
-df_b = pd.DataFrame(hhi_b)
-
+df_c = pd.DataFrame(hhi_c)
 #--------------------#
 ## save
-df_a.to_excel('./data/hhi_a.xlsx', index = False)
-df_b.to_excel('./data/hhi_b.xlsx', index = False)
+df_c.to_excel('./data/hhi_c.xlsx', index = False)
